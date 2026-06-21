@@ -8,10 +8,10 @@ export type ColorScheme = 'light' | 'dark'
  * non-antd surfaces (gradients, custom canvases) stay in sync with the theme.
  */
 export const brand = {
-  /** Royal blue primary on a clean white base. */
-  primaryLight: '#2563eb',
-  primaryDark: '#3b82f6',
-  accent: '#2563eb',
+  /** Deep teal primary with a golden accent, on a warm cream base. */
+  primaryLight: '#15695e',
+  primaryDark: '#4fb39c',
+  accent: '#f2a73b',
   success: '#16a34a',
   warning: '#d97706',
   error: '#dc2626',
@@ -37,27 +37,27 @@ export const getThemeConfig = (scheme: ColorScheme): ThemeConfig => ({
     colorPrimary: scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
     colorInfo: scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
     colorLink: scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
-    colorLinkHover: scheme === 'dark' ? '#60a5fa' : '#1d4ed8',
+    colorLinkHover: scheme === 'dark' ? '#74c9b4' : '#0f4e45',
     ...(scheme === 'dark'
       ? {
-          // Cool slate neutrals
-          colorBgBase: '#0a0f1e',
-          colorBgLayout: '#0a0f1e',
-          colorBgContainer: '#111a2e',
-          colorBgElevated: '#15203a',
-          colorBorder: 'rgba(226,236,245,0.12)',
-          colorBorderSecondary: 'rgba(226,236,245,0.07)',
-          colorTextBase: '#e6ecf5',
+          // Deep teal neutrals
+          colorBgBase: '#0e1f1c',
+          colorBgLayout: '#0e1f1c',
+          colorBgContainer: '#16302c',
+          colorBgElevated: '#1b3a35',
+          colorBorder: 'rgba(231,236,228,0.12)',
+          colorBorderSecondary: 'rgba(231,236,228,0.07)',
+          colorTextBase: '#eaf0e8',
         }
       : {
-          // Clean white neutrals
-          colorBgBase: '#ffffff',
-          colorBgLayout: '#f7f9fc',
+          // Warm cream neutrals
+          colorBgBase: '#f6f2e9',
+          colorBgLayout: '#f6f2e9',
           colorBgContainer: '#ffffff',
           colorBgElevated: '#ffffff',
-          colorBorder: 'rgba(15,23,42,0.10)',
-          colorBorderSecondary: 'rgba(15,23,42,0.06)',
-          colorTextBase: '#0f172a',
+          colorBorder: 'rgba(27,58,54,0.12)',
+          colorBorderSecondary: 'rgba(27,58,54,0.07)',
+          colorTextBase: '#1b3a36',
         }),
   },
   components: {
