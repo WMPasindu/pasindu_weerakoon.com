@@ -8,11 +8,11 @@ import type { ColorScheme } from './tokens'
 const STORAGE_KEY = 'portfolio-color-scheme'
 
 function getInitialScheme(): ColorScheme {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return 'light'
   const stored = window.localStorage.getItem(STORAGE_KEY)
   if (stored === 'light' || stored === 'dark') return stored
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  return prefersDark ? 'dark' : 'light'
+  // Light is the default experience; users can still toggle to dark.
+  return 'light'
 }
 
 interface ThemeProviderProps {

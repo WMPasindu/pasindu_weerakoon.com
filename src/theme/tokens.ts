@@ -8,11 +8,10 @@ export type ColorScheme = 'light' | 'dark'
  * non-antd surfaces (gradients, custom canvases) stay in sync with the theme.
  */
 export const brand = {
-  /** Ink — the primary UI colour (buttons, links, focus). Black-on-cream. */
-  inkLight: '#1a1612',
-  inkDark: '#f3ece1',
-  /** Orange is decorative only — the status dot and small eyebrows. */
-  accent: '#e8743b',
+  /** Royal blue primary on a clean white base. */
+  primaryLight: '#2563eb',
+  primaryDark: '#3b82f6',
+  accent: '#2563eb',
   success: '#16a34a',
   warning: '#d97706',
   error: '#dc2626',
@@ -35,30 +34,30 @@ export const getThemeConfig = (scheme: ColorScheme): ThemeConfig => ({
     scheme === 'dark' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
   token: {
     ...sharedToken,
-    // Ink primary: black on cream (light) / cream on espresso (dark).
-    colorPrimary: scheme === 'dark' ? brand.inkDark : brand.inkLight,
-    colorInfo: scheme === 'dark' ? brand.inkDark : brand.inkLight,
-    colorLink: scheme === 'dark' ? brand.inkDark : brand.inkLight,
-    colorLinkHover: scheme === 'dark' ? '#ffffff' : '#000000',
+    colorPrimary: scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
+    colorInfo: scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
+    colorLink: scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
+    colorLinkHover: scheme === 'dark' ? '#60a5fa' : '#1d4ed8',
     ...(scheme === 'dark'
       ? {
-          // Warm espresso neutrals
-          colorBgBase: '#141009',
-          colorBgLayout: '#141009',
-          colorBgContainer: '#1e1812',
-          colorBgElevated: '#241c14',
-          colorBorder: 'rgba(255,250,240,0.10)',
-          colorBorderSecondary: 'rgba(255,250,240,0.06)',
-          colorTextBase: '#f3ece1',
+          // Cool slate neutrals
+          colorBgBase: '#0a0f1e',
+          colorBgLayout: '#0a0f1e',
+          colorBgContainer: '#111a2e',
+          colorBgElevated: '#15203a',
+          colorBorder: 'rgba(226,236,245,0.12)',
+          colorBorderSecondary: 'rgba(226,236,245,0.07)',
+          colorTextBase: '#e6ecf5',
         }
       : {
-          // Warm cream neutrals
+          // Clean white neutrals
           colorBgBase: '#ffffff',
-          colorBgLayout: '#f8f3ec',
-          colorBgContainer: '#fffdf9',
-          colorBgElevated: '#fffdf9',
-          colorBorder: 'rgba(40,28,18,0.12)',
-          colorTextBase: '#1a1612',
+          colorBgLayout: '#f7f9fc',
+          colorBgContainer: '#ffffff',
+          colorBgElevated: '#ffffff',
+          colorBorder: 'rgba(15,23,42,0.10)',
+          colorBorderSecondary: 'rgba(15,23,42,0.06)',
+          colorTextBase: '#0f172a',
         }),
   },
   components: {
@@ -78,7 +77,7 @@ export const getThemeConfig = (scheme: ColorScheme): ThemeConfig => ({
     Menu: {
       itemBg: 'transparent',
       horizontalItemSelectedColor:
-        scheme === 'dark' ? brand.inkDark : brand.inkLight,
+        scheme === 'dark' ? brand.primaryDark : brand.primaryLight,
     },
     Typography: {
       titleMarginBottom: '0.4em',

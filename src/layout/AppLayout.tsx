@@ -6,6 +6,7 @@ import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { ScrollToTop } from './ScrollToTop'
 import { ScrollProgressBar } from './ScrollProgressBar'
+import { CardSpotlight } from '@/components/feature/CardSpotlight'
 
 /**
  * Application shell: fixed navbar, animated page outlet, footer, plus the
@@ -15,6 +16,7 @@ export function AppLayout() {
   return (
     <div className="app-shell">
       <ScrollToTop />
+      <CardSpotlight />
       <ScrollProgressBar />
       <Navbar />
       <main id="main" className="app-main">

@@ -16,10 +16,12 @@ import { Hero } from '@/components/feature/Hero'
 import { ProjectCard } from '@/components/feature/ProjectCard'
 import { ArticleCard } from '@/components/feature/ArticleCard'
 import { StatCounter } from '@/components/feature/StatCounter'
+import { Magnetic } from '@/components/animations/Magnetic'
 import { featuredProjects } from '@/data/projects'
 import { featuredArticles } from '@/data/articles'
 import { profile } from '@/data/profile'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+
 
 const { Title, Paragraph } = Typography
 
@@ -174,6 +176,7 @@ export function HomePage() {
       <Section>
         <Reveal>
           <div className="cta-panel">
+            <span className="cta-panel__glow" aria-hidden="true" />
             <Title level={2} style={{ marginBottom: 12 }}>
               Let’s build something great together.
             </Title>
@@ -181,11 +184,13 @@ export function HomePage() {
               Whether you’re scaling a team or shipping a new product, I’d love
               to hear what you’re working on.
             </Paragraph>
-            <Button type="primary" size="large" shape="round">
-              <Link to="/contact">
-                Get in touch <ArrowRightOutlined />
-              </Link>
-            </Button>
+            <Magnetic>
+              <Button type="primary" size="large" shape="round">
+                <Link to="/contact">
+                  Get in touch <ArrowRightOutlined />
+                </Link>
+              </Button>
+            </Magnetic>
           </div>
         </Reveal>
       </Section>
