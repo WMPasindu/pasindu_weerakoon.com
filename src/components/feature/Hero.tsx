@@ -45,22 +45,19 @@ export function Hero() {
               aria-hidden="true"
               {...rise(0.5)}
             >
-              <svg viewBox="0 0 220 130" width="100%" height="100%">
+              <svg viewBox="0 0 220 135" width="100%" height="100%">
+                {/* Single continuous path: body curve + arrowhead barbs, so the
+                    head aligns exactly to the line end and the dashes march
+                    through it too. */}
                 <path
-                  d="M210 14 C150 -6 70 24 96 78 C108 104 150 104 150 78 C150 58 120 60 110 84 C100 108 60 120 18 110"
-                  fill="none"
-                  stroke="var(--primary)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeDasharray="2 12"
-                />
-                <path
-                  d="M30 96 L16 112 L36 118"
+                  className="hero__arrow-path"
+                  d="M210 14 C150 -6 70 24 96 78 C108 104 150 104 150 78 C150 58 120 60 110 84 C100 108 60 120 22 108 L46 96 M22 108 L46 124"
                   fill="none"
                   stroke="var(--primary)"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  strokeDasharray="2 12"
                 />
               </svg>
             </motion.span>
