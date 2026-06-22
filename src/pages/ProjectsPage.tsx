@@ -13,7 +13,10 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 type Filter = 'All' | ProjectCategory
 
 export function ProjectsPage() {
-  useDocumentTitle('Projects')
+  useDocumentTitle(
+    'Projects',
+    'Selected work by Pasindu Weerakoon — React platforms, micro-frontend architectures, design systems and cross-platform mobile apps built over 9+ years.',
+  )
   const [filter, setFilter] = useState<Filter>('All')
 
   const visible = useMemo(

@@ -25,7 +25,10 @@ interface ContactValues {
 }
 
 export function ContactPage() {
-  useDocumentTitle('Contact')
+  useDocumentTitle(
+    'Contact',
+    'Get in touch with Pasindu Weerakoon — Software Engineer and Technical Lead in Colombo, Sri Lanka. Available for engineering leadership and React projects.',
+  )
   const { message } = App.useApp()
   const [form] = Form.useForm<ContactValues>()
   const [submitting, setSubmitting] = useState(false)

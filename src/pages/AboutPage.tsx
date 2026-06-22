@@ -15,7 +15,10 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 const { Title, Paragraph, Text } = Typography
 
 export function AboutPage() {
-  useDocumentTitle('About')
+  useDocumentTitle(
+    'About',
+    'About Pasindu Weerakoon — a Software Engineer and Technical Lead in Colombo, Sri Lanka with 9+ years across React, TypeScript, micro-frontends, design systems and cross-platform mobile.',
+  )
 
   return (
     <PageTransition>

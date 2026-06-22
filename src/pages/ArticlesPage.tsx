@@ -12,7 +12,10 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 const allTags = Array.from(new Set(articles.flatMap((a) => a.tags))).sort()
 
 export function ArticlesPage() {
-  useDocumentTitle('Articles')
+  useDocumentTitle(
+    'Articles',
+    'Articles by Pasindu Weerakoon on frontend engineering, React architecture, design systems, and engineering leadership.',
+  )
   const [tag, setTag] = useState<string>('All')
 
   const visible = useMemo(
