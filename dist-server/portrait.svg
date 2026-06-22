@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="820" viewBox="0 0 640 820" fill="none">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdb59c"/>
+      <stop offset="1" stop-color="#8d7257"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9c8062"/>
+      <stop offset="1" stop-color="#6f573f"/>
+    </linearGradient>
+    <radialGradient id="rim" cx="0.5" cy="0.32" r="0.55">
+      <stop offset="0.7" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.12"/>
+    </radialGradient>
+  </defs>
+
+  <!-- soft ground shadow -->
+  <ellipse cx="320" cy="812" rx="240" ry="22" fill="#5b4733" opacity="0.18"/>
+
+  <!-- torso / shoulders -->
+  <path d="M96 820 C96 632 196 548 320 548 C444 548 544 632 544 820 Z" fill="url(#body)"/>
+
+  <!-- neck -->
+  <rect x="282" y="452" width="76" height="130" rx="34" fill="url(#body)"/>
+
+  <!-- hair (behind head) -->
+  <ellipse cx="320" cy="338" rx="146" ry="160" fill="url(#hair)"/>
+
+  <!-- head -->
+  <ellipse cx="320" cy="372" rx="120" ry="138" fill="url(#body)"/>
+
+  <!-- subtle light rim -->
+  <ellipse cx="320" cy="372" rx="120" ry="138" fill="url(#rim)"/>
+</svg>
