@@ -1,10 +1,22 @@
 import type { Project, ProjectCategory } from './types'
 
 /**
- * Real projects by Pasindu Weerakoon. Replace `cover` with real screenshots
- * and `links` with live URLs / repos as each project goes public.
+ * Cover gradient per category — a warm brown→amber family where each category
+ * has its own distinct tone, so cards are colour-coded by category.
  */
-export const projects: Project[] = [
+const categoryCover: Record<ProjectCategory, string> = {
+  Web: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
+  AI: 'linear-gradient(135deg, #5c3210 0%, #b85c1e 55%, #e0913f 100%)',
+  Platform: 'linear-gradient(160deg, #6b3a12 0%, #c2701f 55%, #e8a24d 100%)',
+  Mobile: 'linear-gradient(135deg, #4a2e0a 0%, #9c5a14 60%, #d99233 100%)',
+  'Open Source': 'linear-gradient(135deg, #2e1c08 0%, #6b3f12 100%)',
+}
+
+/**
+ * Real projects by Pasindu Weerakoon. Replace `links` with live URLs / repos
+ * as each project goes public. Covers are assigned by category below.
+ */
+const rawProjects: Project[] = [
   {
     slug: 'photolocations-lk',
     title: 'PhotoLocations.lk — Photo-Location Booking Marketplace',
@@ -128,6 +140,12 @@ export const projects: Project[] = [
     ],
   },
 ]
+
+/** Apply the category-based cover to every project for consistent colouring. */
+export const projects: Project[] = rawProjects.map((project) => ({
+  ...project,
+  cover: categoryCover[project.category],
+}))
 
 export const projectCategories: ProjectCategory[] = [
   'Web',
