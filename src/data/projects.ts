@@ -26,21 +26,21 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'smartname-ai-domain',
-    title: 'SmartName — Agentic AI Domain-Name Generator',
+    slug: 'ai-domain-name-generator',
+    title: 'Agentic AI Domain-Name Generator',
     summary:
-      'An agentic RAG platform that turns a plain-language prompt into available, on-brand .lk domain names — powered by locally-hosted small language models.',
+      'An agentic RAG platform that turns a plain-language prompt into available, on-brand domain names — powered by locally-hosted small language models.',
     description:
-      'SmartName turns a user’s prompt into ranked, available domain-name suggestions using an agentic Retrieval-Augmented Generation pipeline built with LangGraph. Four cooperating agents — an orchestrator, a name generator, a validator and a ranking agent — collaborate to generate candidates, enforce rules, check availability and score results. Generation runs on small language models hosted locally (Gemma, Mistral or Qwen via Ollama), so no data leaves the environment. Retrieval uses Weaviate with hybrid search (dense embeddings + BM25) over a curated domain/category corpus; Pydantic enforces structured LLM output, and PostgreSQL persists suggestions. The architecture deliberately minimises LLM calls to stay fast on CPU-bound local models.',
+      'An agentic Retrieval-Augmented Generation platform that turns a user’s plain-language prompt into ranked, available domain-name suggestions. Built on a LangGraph pipeline where cooperating agents each own a stage: an orchestrator coordinates the flow; query expansion enriches the prompt; semantic retrieval pulls relevant context; a name-generator agent produces candidates in a single constrained-JSON call; a validator agent enforces naming rules and rejects literal or low-quality results; an availability check queries the domain registry; and a ranking agent scores survivors with a weighted composite for relevance and brand fit, looping back to regenerate when needed. Generation runs entirely on small language models hosted locally (Gemma, Mistral or Qwen via Ollama), so nothing leaves the environment. Retrieval uses Weaviate with hybrid search — dense embeddings combined with BM25 — over a curated domain/category corpus; Pydantic enforces structured model output; PostgreSQL persists suggestions. The pipeline is deliberately designed to minimise LLM calls so it stays responsive on CPU-bound local models.',
     category: 'AI',
     tags: ['React', 'Python', 'LangGraph', 'RAG', 'Weaviate', 'PostgreSQL'],
     cover: 'linear-gradient(135deg, #15695e 0%, #1f8a78 100%)',
     featured: true,
     links: { caseStudy: '#' },
     metrics: [
-      { label: 'Agents', value: '4' },
       { label: 'Retrieval', value: 'Dense + BM25' },
       { label: 'Models', value: 'Local SLM' },
+      { label: 'Pipeline', value: 'LangGraph' },
     ],
   },
   {
