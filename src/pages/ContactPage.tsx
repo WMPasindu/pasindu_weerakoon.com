@@ -33,21 +33,57 @@ export function ContactPage() {
   const [form] = Form.useForm<ContactValues>()
   const [submitting, setSubmitting] = useState(false)
 
-  const onFinish = (values: ContactValues) => {
+  // Web3Forms access key (free, unlimited) — delivers submissions to the inbox.
+  // Safe to expose in the client; it only authorises delivery, not the account.
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
+    | string
+    | undefined
+
+  const onFinish = async (values: ContactValues) => {
     setSubmitting(true)
-    // No backend is wired up. We compose a mailto draft so the form is
-    // immediately useful — swap this for a fetch() to your API or a service
-    // like Formspree / Resend when you deploy.
-    const body = encodeURIComponent(
-      `${values.message}\n\n— ${values.name} (${values.email})`,
-    )
-    const subject = encodeURIComponent(values.subject)
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
-    setTimeout(() => {
+
+    // Fallback: if no key is configured yet, open the user's mail client.
+    if (!accessKey) {
+      const body = encodeURIComponent(
+        `${values.message}\n\n— ${values.name} (${values.email})`,
+      )
+      window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
+        values.subject,
+      )}&body=${body}`
       setSubmitting(false)
-      message.success('Thanks! Your email client should open shortly.')
-      form.resetFields()
-    }, 600)
+      message.info('Opening your email client…')
+      return
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: values.name,
+          email: values.email,
+          subject: `Portfolio enquiry: ${values.subject}`,
+          message: values.message,
+          from_name: 'Portfolio Contact Form',
+          replyto: values.email,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        message.success('Thanks! Your message has been sent — I’ll reply soon.')
+        form.resetFields()
+      } else {
+        message.error('Sorry, something went wrong. Please email me directly.')
+      }
+    } catch {
+      message.error('Network error. Please email me directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
