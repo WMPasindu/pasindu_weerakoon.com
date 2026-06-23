@@ -35,9 +35,10 @@ export function ContactPage() {
 
   // Web3Forms access key (free, unlimited) — delivers submissions to the inbox.
   // Safe to expose in the client; it only authorises delivery, not the account.
-  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
-    | string
-    | undefined
+  // An env var (VITE_WEB3FORMS_ACCESS_KEY) overrides this default if set.
+  const accessKey =
+    (import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined) ||
+    'd101a47a-bea1-4740-a2c0-1097ec6d5860'
 
   const onFinish = async (values: ContactValues) => {
     setSubmitting(true)
