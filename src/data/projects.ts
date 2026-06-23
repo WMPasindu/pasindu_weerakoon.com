@@ -1,11 +1,66 @@
 import type { Project, ProjectCategory } from './types'
 
 /**
- * Representative projects derived from Pasindu Weerakoon's CV experience.
- * Covers double as case studies for the work — replace `cover` with real
- * screenshots and `links` with live URLs whenever a project goes public.
+ * Projects. The first group are real, named products; the rest are
+ * representative case studies derived from Pasindu Weerakoon's CV experience.
+ * Replace `cover` with real screenshots and `links` with live URLs as each
+ * project goes public.
  */
 export const projects: Project[] = [
+  {
+    slug: 'photolocations-lk',
+    title: 'PhotoLocations.lk — Photo-Location Booking Marketplace',
+    summary:
+      'A marketplace for discovering and booking photo-shoot locations across Sri Lanka — weddings, model shoots, events and more.',
+    description:
+      'A two-sided marketplace where photographers and clients discover, compare and book photo-shoot locations across Sri Lanka, and where location owners list and manage their spaces. Built as an npm-workspaces monorepo with a React 18 + TypeScript + Ant Design client (TanStack Query + Zustand) and a layered Node 20 + Express + TypeScript API (routes → controller → service → repository) with Zod validation and JWT auth. The frontend is server-side rendered with Vite SSR — data is prefetched and dehydrated so pages ship real HTML for SEO and AI crawlers, with per-page meta and JSON-LD (Product, AggregateRating, Breadcrumb). The data layer is modelled in Prisma and abstracted behind repositories so it can move to PostgreSQL without touching business logic.',
+    category: 'Web',
+    tags: ['React', 'TypeScript', 'Ant Design', 'Node.js', 'Express', 'SSR'],
+    cover: 'linear-gradient(135deg, #0e2f2a 0%, #15695e 100%)',
+    featured: true,
+    links: { caseStudy: '#' },
+    metrics: [
+      { label: 'Rendering', value: 'Vite SSR' },
+      { label: 'Architecture', value: 'Monorepo' },
+      { label: 'SEO', value: 'JSON-LD' },
+    ],
+  },
+  {
+    slug: 'smartname-ai-domain',
+    title: 'SmartName — Agentic AI Domain-Name Generator',
+    summary:
+      'An agentic RAG platform that turns a plain-language prompt into available, on-brand .lk domain names — powered by locally-hosted small language models.',
+    description:
+      'SmartName turns a user’s prompt into ranked, available domain-name suggestions using an agentic Retrieval-Augmented Generation pipeline built with LangGraph. Four cooperating agents — an orchestrator, a name generator, a validator and a ranking agent — collaborate to generate candidates, enforce rules, check availability and score results. Generation runs on small language models hosted locally (Gemma, Mistral or Qwen via Ollama), so no data leaves the environment. Retrieval uses Weaviate with hybrid search (dense embeddings + BM25) over a curated domain/category corpus; Pydantic enforces structured LLM output, and PostgreSQL persists suggestions. The architecture deliberately minimises LLM calls to stay fast on CPU-bound local models.',
+    category: 'AI',
+    tags: ['React', 'Python', 'LangGraph', 'RAG', 'Weaviate', 'PostgreSQL'],
+    cover: 'linear-gradient(135deg, #15695e 0%, #1f8a78 100%)',
+    featured: true,
+    links: { caseStudy: '#' },
+    metrics: [
+      { label: 'Agents', value: '4' },
+      { label: 'Retrieval', value: 'Dense + BM25' },
+      { label: 'Models', value: 'Local SLM' },
+    ],
+  },
+  {
+    slug: 'smart-logistics-platform',
+    title: 'Smart Logistics Platform',
+    summary:
+      'An end-to-end platform for organisations to manage their entire logistics flow in one place.',
+    description:
+      'A logistics management platform that gives organisations a single system to plan, track and manage their entire logistics flow — from orders and shipments through to fulfilment and reporting. Built with a React + JavaScript frontend, a Node.js and Python backend, and PostgreSQL for data, deployed on AWS. Designed around clear domain boundaries so each part of the logistics workflow can scale and evolve independently.',
+    category: 'Platform',
+    tags: ['React', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS'],
+    cover: 'linear-gradient(135deg, #14332f 0%, #15695e 70%, #1f8a78 100%)',
+    featured: true,
+    links: { caseStudy: '#' },
+    metrics: [
+      { label: 'Scope', value: 'End-to-end' },
+      { label: 'Cloud', value: 'AWS' },
+      { label: 'Stack', value: 'Full-stack' },
+    ],
+  },
   {
     slug: 'healthcare-react-18-migration',
     title: 'Healthcare Platform — React 18 + Next.js Migration',
@@ -15,8 +70,7 @@ export const projects: Project[] = [
       'Led the modernisation of a clinical-grade healthcare web platform. Owned the migration plan, incremental rollout, and SSR strategy, leveraging React 18 concurrent features and Next.js to lift Core Web Vitals across the board while keeping the team shipping features in parallel.',
     category: 'Web',
     tags: ['React 18', 'Next.js', 'SSR', 'Performance', 'Healthcare'],
-    cover: 'linear-gradient(135deg, #3a2418 0%, #d65a31 100%)',
-    featured: true,
+    cover: 'linear-gradient(135deg, #0e2f2a 0%, #15695e 100%)',
     links: { caseStudy: '#' },
     metrics: [
       { label: 'Performance lift', value: '+25%' },
@@ -33,8 +87,7 @@ export const projects: Project[] = [
       'Designed and rolled out a micro-frontend architecture with a Turborepo-based mono-repo, shared design tokens, and an independent build pipeline per team. Reduced cross-team coordination overhead, enabled parallel releases, and shrank deployment cycles by 30% through CI/CD optimisation.',
     category: 'Platform',
     tags: ['Micro-frontends', 'Mono-repo', 'Turborepo', 'CI/CD'],
-    cover: 'linear-gradient(135deg, #5c3a23 0%, #e8924a 100%)',
-    featured: true,
+    cover: 'linear-gradient(135deg, #123c36 0%, #1f8a78 100%)',
     links: { caseStudy: '#' },
     metrics: [
       { label: 'Deploy cycle', value: '−30%' },
@@ -51,8 +104,7 @@ export const projects: Project[] = [
       'Led the creation of an internal design system — tokens, themed components, accessibility-first patterns, and shared documentation. Aligned brand and UX across products, eliminated component reinvention, and gave product teams a faster, more consistent path from design to production.',
     category: 'Platform',
     tags: ['Design System', 'React', 'A11y (WCAG)', 'Tailwind'],
-    cover: 'linear-gradient(160deg, #d65a31 0%, #3a2418 100%)',
-    featured: true,
+    cover: 'linear-gradient(160deg, #15695e 0%, #0e2f2a 100%)',
     links: { caseStudy: '#' },
     metrics: [
       { label: 'Products served', value: '6+' },
@@ -69,7 +121,7 @@ export const projects: Project[] = [
       'Rebuilt the search and filtering experience on a high-traffic healthcare product. Introduced debounced query orchestration, server-driven pagination, optimistic UI states, and result caching — making the experience feel instant on large datasets.',
     category: 'Web',
     tags: ['React', 'UX', 'Performance', 'Caching'],
-    cover: 'linear-gradient(135deg, #2a1a10 0%, #b8431f 100%)',
+    cover: 'linear-gradient(135deg, #14332f 0%, #1f8a78 100%)',
     links: { caseStudy: '#' },
     metrics: [
       { label: 'Latency', value: '−40%' },
@@ -85,7 +137,7 @@ export const projects: Project[] = [
       'Designed and built a portfolio of cross-platform mobile applications spanning React Native, Flutter, Ionic, and native Android. Led UI decisions, established automated testing workflows, and partnered with clients across timezones to ensure each release met functional and quality goals.',
     category: 'Mobile',
     tags: ['React Native', 'Flutter', 'Ionic', 'Android'],
-    cover: 'linear-gradient(135deg, #8a4a25 0%, #e8924a 100%)',
+    cover: 'linear-gradient(135deg, #0f4e45 0%, #2aa088 100%)',
     links: { caseStudy: '#' },
     metrics: [
       { label: 'Apps shipped', value: '10+' },
@@ -101,7 +153,7 @@ export const projects: Project[] = [
       'Designed and rolled out an engineering quality programme — pairing standards, code-review playbooks, automated test scaffolding with Jest, React Testing Library and Cypress, and reusable architectural patterns rooted in SOLID and clean architecture. Reduced regression incidents and made onboarding measurably faster.',
     category: 'Platform',
     tags: ['TDD', 'Jest', 'React Testing Library', 'Cypress', 'SOLID'],
-    cover: 'linear-gradient(160deg, #3a2418 0%, #d65a31 100%)',
+    cover: 'linear-gradient(160deg, #0e2f2a 0%, #15695e 100%)',
     links: { caseStudy: '#' },
     metrics: [
       { label: 'Engineers coached', value: '15+' },
