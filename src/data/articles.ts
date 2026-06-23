@@ -4,9 +4,9 @@ import { estimateReadingMinutes } from '@/utils/format'
 // Markdown bodies are imported as raw strings via Vite's `?raw` suffix.
 // Keeping the body out of this file lets you write articles in real markdown
 // with full editor support, while the metadata stays type-checked here.
-import scalingFrontendTeams from '@/content/articles/scaling-frontend-teams.md?raw'
-import animationsThatRespectUsers from '@/content/articles/animations-that-respect-users.md?raw'
-import fromEngineerToTechLead from '@/content/articles/from-engineer-to-tech-lead.md?raw'
+import reactMigration from '@/content/articles/react-16-to-18-migration.md?raw'
+import microFrontendMonorepo from '@/content/articles/micro-frontend-monorepo.md?raw'
+import designSystemAdoption from '@/content/articles/design-system-adoption.md?raw'
 
 type ArticleMeta = Omit<Article, 'readingMinutes'> & {
   readingMinutes?: number
@@ -14,36 +14,37 @@ type ArticleMeta = Omit<Article, 'readingMinutes'> & {
 
 const rawArticles: ArticleMeta[] = [
   {
-    slug: 'scaling-frontend-teams',
-    title: 'Scaling Frontend Teams Without Slowing Down',
+    slug: 'react-16-to-18-migration',
+    title: 'Migrating a Large React App from 16 to 18 — Without a Rewrite',
     description:
-      'How design systems, explicit boundaries, and fast feedback keep a growing frontend team shipping.',
-    date: '2026-04-18',
-    tags: ['Leadership', 'Architecture', 'Frontend'],
-    cover: 'linear-gradient(135deg, #3a2418 0%, #d65a31 100%)',
-    body: scalingFrontendTeams,
+      'An incremental, low-risk playbook for upgrading a business-critical React app to React 18 and Next.js — and the changes that actually moved performance ~25%.',
+    date: '2026-05-12',
+    tags: ['React', 'Next.js', 'Performance', 'Architecture'],
+    cover: 'linear-gradient(135deg, #0e2f2a 0%, #15695e 100%)',
+    body: reactMigration,
     featured: true,
   },
   {
-    slug: 'animations-that-respect-users',
-    title: 'Animations That Respect Your Users',
+    slug: 'micro-frontend-monorepo',
+    title: 'Micro-Frontends in a Mono-repo: Autonomy Without Chaos',
     description:
-      'A practical guide to building motion that is smooth, purposeful, and accessible.',
-    date: '2026-03-02',
-    tags: ['Frontend', 'Animation', 'Accessibility'],
-    cover: 'linear-gradient(160deg, #5c3a23 0%, #e8924a 100%)',
-    body: animationsThatRespectUsers,
+      'When micro-frontends are worth it, how to compose them in a Turborepo mono-repo, and the trade-offs that cut our deployment cycles by ~30%.',
+    date: '2026-04-08',
+    tags: ['Architecture', 'Micro-frontends', 'Mono-repo', 'React'],
+    cover: 'linear-gradient(135deg, #15695e 0%, #1f8a78 100%)',
+    body: microFrontendMonorepo,
     featured: true,
   },
   {
-    slug: 'from-engineer-to-tech-lead',
-    title: 'From Engineer to Tech Lead: What Actually Changes',
+    slug: 'design-system-adoption',
+    title: 'Building a Design System Teams Actually Adopt',
     description:
-      'The real shift when you move into technical leadership — and the skills nobody tells you to build.',
-    date: '2026-01-21',
-    tags: ['Leadership', 'Career'],
-    cover: 'linear-gradient(135deg, #8a4a25 0%, #e8924a 100%)',
-    body: fromEngineerToTechLead,
+      'Why design systems fail on adoption, not components — and how tokens, DX, accessibility and kind versioning drive consistent UI across products.',
+    date: '2026-02-26',
+    tags: ['Design Systems', 'Frontend', 'Accessibility', 'TypeScript'],
+    cover: 'linear-gradient(135deg, #14332f 0%, #15695e 70%, #1f8a78 100%)',
+    body: designSystemAdoption,
+    featured: true,
   },
 ]
 
