@@ -9,7 +9,19 @@ import { ArticleCard } from '@/components/feature/ArticleCard'
 import { articles } from '@/data/articles'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 
-const allTags = Array.from(new Set(articles.flatMap((a) => a.tags))).sort()
+// A small, curated set of filters (not every tag) keeps the control clean.
+// Only filters that actually match at least one article are shown.
+const CURATED_FILTERS = [
+  'React',
+  'Architecture',
+  'Design Systems',
+  'Performance',
+] as const
+
+const filters = [
+  'All',
+  ...CURATED_FILTERS.filter((f) => articles.some((a) => a.tags.includes(f))),
+]
 
 export function ArticlesPage() {
   useDocumentTitle(
@@ -39,7 +51,7 @@ export function ArticlesPage() {
               size="large"
               value={tag}
               onChange={(value) => setTag(value as string)}
-              options={['All', ...allTags]}
+              options={filters}
             />
           </div>
         </Reveal>
