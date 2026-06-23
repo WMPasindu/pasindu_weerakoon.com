@@ -34,7 +34,8 @@ export const projects: Project[] = [
       'An agentic Retrieval-Augmented Generation platform that turns a user’s plain-language prompt into ranked, available domain-name suggestions. Built on a LangGraph pipeline where cooperating agents each own a stage: an orchestrator coordinates the flow; query expansion enriches the prompt; semantic retrieval pulls relevant context; a name-generator agent produces candidates in a single constrained-JSON call; a validator agent enforces naming rules and rejects literal or low-quality results; an availability check queries the domain registry; and a ranking agent scores survivors with a weighted composite for relevance and brand fit, looping back to regenerate when needed. Generation runs entirely on small language models hosted locally (Gemma, Mistral or Qwen via Ollama), so nothing leaves the environment. Retrieval uses Weaviate with hybrid search — dense embeddings combined with BM25 — over a curated domain/category corpus; Pydantic enforces structured model output; PostgreSQL persists suggestions. The pipeline is deliberately designed to minimise LLM calls so it stays responsive on CPU-bound local models.',
     category: 'AI',
     tags: ['React', 'Python', 'LangGraph', 'RAG', 'Weaviate', 'PostgreSQL'],
-    cover: 'linear-gradient(135deg, #15695e 0%, #1f8a78 100%)',
+    // Warm brown→amber cover to set this AI project apart from the teal ones.
+    cover: 'linear-gradient(135deg, #5c3210 0%, #b85c1e 55%, #e0913f 100%)',
     featured: true,
     links: { caseStudy: '#' },
     metrics: [
