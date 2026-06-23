@@ -18,7 +18,10 @@ import { ArticleCard } from '@/components/feature/ArticleCard'
 import { StatCounter } from '@/components/feature/StatCounter'
 import { Magnetic } from '@/components/animations/Magnetic'
 import { featuredProjects } from '@/data/projects'
-import { featuredArticles } from '@/data/articles'
+import { articles } from '@/data/articles'
+
+// Show only the three most recent articles on the home page.
+const latestArticles = articles.slice(0, 3)
 import { profile } from '@/data/profile'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 
@@ -161,8 +164,8 @@ export function HomePage() {
         </div>
         <Stagger>
           <Row gutter={[24, 24]}>
-            {featuredArticles.map((article) => (
-              <Col xs={24} md={12} key={article.slug}>
+            {latestArticles.map((article) => (
+              <Col xs={24} md={12} lg={8} key={article.slug}>
                 <StaggerItem className="grid-cell">
                   <ArticleCard article={article} />
                 </StaggerItem>
