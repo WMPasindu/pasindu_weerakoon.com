@@ -10,6 +10,7 @@ import { Container } from '@/components/common/Container'
 import { Cover } from '@/components/common/Cover'
 import { MarkdownRenderer } from '@/components/feature/MarkdownRenderer'
 import { ArticleCard } from '@/components/feature/ArticleCard'
+import { ShareButtons } from '@/components/feature/ShareButtons'
 import { Reveal } from '@/components/animations/Reveal'
 import { articles, getArticleBySlug } from '@/data/articles'
 import { formatDate, formatReadingTime } from '@/utils/format'
@@ -21,7 +22,7 @@ export function ArticleDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const article = slug ? getArticleBySlug(slug) : undefined
 
-  useDocumentTitle(article?.title)
+  useDocumentTitle(article?.title, article?.description)
 
   if (!article) {
     return <Navigate to="/articles" replace />
@@ -68,6 +69,7 @@ export function ArticleDetailPage() {
                 {formatReadingTime(article.readingMinutes)}
               </Text>
             </Space>
+            <ShareButtons title={article.title} />
           </Reveal>
         </Container>
 

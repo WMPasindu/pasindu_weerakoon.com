@@ -13,9 +13,20 @@ import { ProjectsPage } from '@/pages/ProjectsPage'
 import { ArticlesPage } from '@/pages/ArticlesPage'
 import { GalleryPage } from '@/pages/GalleryPage'
 import { ContactPage } from '@/pages/ContactPage'
+import { ArticleDetailPage } from '@/pages/ArticleDetailPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
+import { articles } from '@/data/articles'
 
 export { routeMeta } from '@/config/routeMeta'
+
+/** Lightweight per-article metadata for the prerender (no markdown body). */
+export const articleMeta = articles.map((a) => ({
+  slug: a.slug,
+  title: a.title,
+  description: a.description,
+  date: a.date,
+  tags: a.tags,
+}))
 
 /**
  * Synchronous route tree (no lazy()) used only for build-time prerendering, so
@@ -31,6 +42,7 @@ const routes: RouteObject[] = [
       { path: 'about', element: <AboutPage /> },
       { path: 'projects', element: <ProjectsPage /> },
       { path: 'articles', element: <ArticlesPage /> },
+      { path: 'articles/:slug', element: <ArticleDetailPage /> },
       { path: 'gallery', element: <GalleryPage /> },
       { path: 'contact', element: <ContactPage /> },
       { path: '*', element: <NotFoundPage /> },
