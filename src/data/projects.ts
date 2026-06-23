@@ -14,7 +14,7 @@ export const projects: Project[] = [
       'A two-sided marketplace where photographers and clients discover, compare and book photo-shoot locations across Sri Lanka, and where location owners list and manage their spaces. Built as an npm-workspaces monorepo with a React 18 + TypeScript + Ant Design client (TanStack Query + Zustand) and a layered Node 20 + Express + TypeScript API (routes → controller → service → repository) with Zod validation and JWT auth. The frontend is server-side rendered with Vite SSR — data is prefetched and dehydrated so pages ship real HTML for SEO and AI crawlers, with per-page meta and JSON-LD (Product, AggregateRating, Breadcrumb). The data layer is modelled in Prisma and abstracted behind repositories so it can move to PostgreSQL without touching business logic.',
     category: 'Web',
     tags: ['React', 'TypeScript', 'Ant Design', 'Node.js', 'Express', 'SSR'],
-    cover: 'linear-gradient(135deg, #0e2f2a 0%, #15695e 100%)',
+    cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
     featured: true,
     links: { caseStudy: '#' },
     metrics: [
@@ -51,7 +51,7 @@ export const projects: Project[] = [
       'A logistics management platform that gives organisations a single system to plan, track and manage their entire logistics flow — from orders and shipments through to fulfilment and reporting. Built with a React + JavaScript frontend, a Node.js and Python backend, and PostgreSQL for data, deployed on AWS. Designed around clear domain boundaries so each part of the logistics workflow can scale and evolve independently.',
     category: 'Platform',
     tags: ['React', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS'],
-    cover: 'linear-gradient(135deg, #14332f 0%, #15695e 70%, #1f8a78 100%)',
+    cover: 'linear-gradient(160deg, #6b3a12 0%, #c2701f 55%, #e8a24d 100%)',
     featured: true,
     links: { caseStudy: '#' },
     metrics: [
