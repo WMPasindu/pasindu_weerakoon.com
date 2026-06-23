@@ -101,7 +101,7 @@ export function ArticleDetailPage() {
           <Title level={3} style={{ marginBottom: 24 }}>
             Keep reading
           </Title>
-          <div className="auto-grid auto-grid--wide">
+          <div className="related-grid">
             {related.map((item) => (
               <div className="grid-cell" key={item.slug}>
                 <ArticleCard article={item} />

@@ -1181,3 +1181,17 @@ body::after {
   color: var(--text-secondary);
   margin-right: 4px;
 }
+
+/* ---- "Keep reading" related grid — keep cards compact even with 1 item -- */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 620px;
+}
+@media (max-width: 560px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}
