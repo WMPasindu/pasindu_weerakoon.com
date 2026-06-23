@@ -1,5 +1,10 @@
 import { Button, Card, Space, Tag, Typography } from 'antd'
-import { LinkOutlined, GithubOutlined, ReadOutlined } from '@ant-design/icons'
+import {
+  LinkOutlined,
+  GithubOutlined,
+  ReadOutlined,
+  SafetyCertificateOutlined,
+} from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { Cover } from '@/components/common/Cover'
 import type { Project } from '@/data/types'
@@ -92,6 +97,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 Case study
               </Button>
             )}
+            {project.clientProject &&
+              !project.links.live &&
+              !project.links.repo && (
+                <Text type="secondary" className="project-card__client">
+                  <SafetyCertificateOutlined /> Client project
+                </Text>
+              )}
           </Space>
         </div>
       </Card>

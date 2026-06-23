@@ -28,7 +28,8 @@ const rawProjects: Project[] = [
     tags: ['React', 'TypeScript', 'Ant Design', 'Node.js', 'Express', 'SSR'],
     cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
     featured: true,
-    links: { caseStudy: '#' },
+    clientProject: true,
+    links: {},
     metrics: [
       { label: 'Rendering', value: 'Vite SSR' },
       { label: 'Architecture', value: 'Monorepo' },
@@ -47,7 +48,8 @@ const rawProjects: Project[] = [
     // Warm brown→amber cover to set this AI project apart from the teal ones.
     cover: 'linear-gradient(135deg, #5c3210 0%, #b85c1e 55%, #e0913f 100%)',
     featured: true,
-    links: { caseStudy: '#' },
+    clientProject: true,
+    links: {},
     metrics: [
       { label: 'Retrieval', value: 'Dense + BM25' },
       { label: 'Models', value: 'Local SLM' },
@@ -65,7 +67,8 @@ const rawProjects: Project[] = [
     tags: ['React', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS'],
     cover: 'linear-gradient(160deg, #6b3a12 0%, #c2701f 55%, #e8a24d 100%)',
     featured: true,
-    links: { caseStudy: '#' },
+    clientProject: true,
+    links: {},
     metrics: [
       { label: 'Scope', value: 'End-to-end' },
       { label: 'Cloud', value: 'AWS' },
@@ -82,7 +85,8 @@ const rawProjects: Project[] = [
     category: 'Mobile',
     tags: ['React Native', 'Mobile', 'Education', 'Cross-platform'],
     cover: 'linear-gradient(135deg, #0f4e45 0%, #2aa088 100%)',
-    links: { caseStudy: '#' },
+    clientProject: true,
+    links: {},
     metrics: [
       { label: 'Platform', value: 'iOS + Android' },
       { label: 'Built with', value: 'React Native' },
@@ -99,7 +103,8 @@ const rawProjects: Project[] = [
     category: 'Mobile',
     tags: ['React Native', 'JavaScript', 'MathJax', 'Native Modules'],
     cover: 'linear-gradient(135deg, #123c36 0%, #1f8a78 100%)',
-    links: { caseStudy: '#' },
+    clientProject: true,
+    links: {},
     metrics: [
       { label: 'Rendering', value: 'MathJax' },
       { label: 'Bridge', value: 'Native modules' },
@@ -116,7 +121,8 @@ const rawProjects: Project[] = [
     category: 'Mobile',
     tags: ['Swift', 'React Native', 'iOS', 'In-App Purchase'],
     cover: 'linear-gradient(160deg, #15695e 0%, #0e2f2a 100%)',
-    links: { caseStudy: '#' },
+    clientProject: true,
+    links: {},
     metrics: [
       { label: 'Billing', value: 'Auto-renew' },
       { label: 'Payments', value: 'Apple IAP' },

@@ -81,6 +81,8 @@ export interface Project {
   cover: string
   /** Marks the project for the "featured" home section. */
   featured?: boolean
+  /** Client engagement (vs. an internal case study); shows a subtle label. */
+  clientProject?: boolean
   links: {
     live?: string
     repo?: string

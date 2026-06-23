@@ -1195,3 +1195,16 @@ body::after {
     max-width: 360px;
   }
 }
+
+/* ---- Project "Client project" label ----------------------------------- */
+.project-card__client {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.project-card__client .anticon {
+  color: var(--accent);
+}
