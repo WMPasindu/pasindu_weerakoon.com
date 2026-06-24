@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Carousel, Image, Segmented, Tag, Typography } from 'antd'
+import { Carousel, Image, Segmented, Space, Tag, Typography } from 'antd'
 import { PictureOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { PageTransition } from '@/components/animations/PageTransition'
@@ -85,13 +85,13 @@ export function GalleryPage() {
                   <Paragraph type="secondary" style={{ marginBottom: 8 }}>
                     {image.description}
                   </Paragraph>
-                  <div>
+                  <Space size={[6, 6]} wrap>
                     {image.tags.map((t) => (
                       <Tag key={t} bordered={false}>
                         {t}
                       </Tag>
                     ))}
-                  </div>
+                  </Space>
                 </figcaption>
               </motion.figure>
             ))}
