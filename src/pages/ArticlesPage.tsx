@@ -12,6 +12,7 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 // A small, curated set of filters (not every tag) keeps the control clean.
 // Only filters that actually match at least one article are shown.
 const CURATED_FILTERS = [
+  'AI',
   'React',
   'Architecture',
   'Design Systems',
@@ -56,7 +57,7 @@ export function ArticlesPage() {
           </div>
         </Reveal>
 
-        <motion.div className="auto-grid auto-grid--wide" layout>
+        <motion.div className="auto-grid" layout>
           <AnimatePresence mode="popLayout">
             {visible.map((article) => (
               <motion.div
