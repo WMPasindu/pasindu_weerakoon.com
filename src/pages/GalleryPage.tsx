@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
-import { Image, Segmented, Tag, Typography } from 'antd'
+import { Carousel, Image, Segmented, Tag, Typography } from 'antd'
+import { PictureOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { PageTransition } from '@/components/animations/PageTransition'
 import { Section } from '@/components/common/Section'
@@ -52,11 +53,30 @@ export function GalleryPage() {
                 transition={{ duration: 0.5, delay: (index % 3) * 0.06 }}
               >
                 <div className="masonry__media">
-                  <Image
-                    src={image.src}
-                    alt={image.title}
-                    rootClassName="masonry__image"
-                  />
+                  {image.images.length > 1 ? (
+                    <div className="masonry__carousel">
+                      <span className="masonry__count">
+                        <PictureOutlined /> {image.images.length}
+                      </span>
+                      <Carousel autoplay autoplaySpeed={3500} draggable dots>
+                        {image.images.map((src) => (
+                          <div key={src}>
+                            <Image
+                              src={src}
+                              alt={image.title}
+                              rootClassName="masonry__image"
+                            />
+                          </div>
+                        ))}
+                      </Carousel>
+                    </div>
+                  ) : (
+                    <Image
+                      src={image.images[0]}
+                      alt={image.title}
+                      rootClassName="masonry__image"
+                    />
+                  )}
                 </div>
                 <figcaption className="masonry__caption">
                   <Title level={5} style={{ marginBottom: 4 }}>

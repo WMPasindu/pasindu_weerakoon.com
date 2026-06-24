@@ -110,7 +110,8 @@ export interface GalleryImage {
   id: string
   title: string
   description: string
-  src: string
+  /** One image = a single photo; multiple = an auto-sliding collection. */
+  images: string[]
   tags: string[]
   /** Aspect-ratio hint for the masonry layout. */
   span?: 'tall' | 'wide' | 'normal'
