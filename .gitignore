@@ -29,3 +29,6 @@ dist-server
 # Local env files
 .env
 .env.local
+
+# Large source photo originals (compressed copies live in public/gallery)
+src/assets/
