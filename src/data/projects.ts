@@ -76,6 +76,24 @@ const rawProjects: Project[] = [
     ],
   },
   {
+    slug: 'snake-game',
+    title: 'Snake Game — Published Android App',
+    summary:
+      'A polished, feature-rich take on the classic Snake, built with React Native and published on the Google Play Store.',
+    description:
+      'A modern Snake game built from scratch with React Native and TypeScript, and published on the Google Play Store. The game engine is a pure, fully unit-tested step function, with a requestAnimationFrame loop driving smooth animated movement. Features include five themes, three difficulty levels, walls-vs-wrap edge modes, a 3-2-1 countdown, swipe and on-screen d-pad controls, haptics, sound effects, and persisted high scores and settings. A personal project showcasing clean game-loop architecture, testability, and end-to-end mobile release.',
+    category: 'Mobile',
+    tags: ['React Native', 'TypeScript', 'Game', 'Android'],
+    links: {
+      live: 'https://play.google.com/store/apps/details?id=dev.pasindu.snakegame.com',
+    },
+    metrics: [
+      { label: 'Status', value: 'On Play Store' },
+      { label: 'Themes', value: '5' },
+      { label: 'Engine', value: 'Unit-tested' },
+    ],
+  },
+  {
     slug: 'readyme-al-exam-app',
     title: 'ReadyMe — A/L Exam Prep Mobile App',
     summary:
