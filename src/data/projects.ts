@@ -43,13 +43,13 @@ const rawProjects: Project[] = [
   },
   {
     slug: 'florarossy',
-    title: 'FloraRossy',
+    title: 'FloraRossy — Kids’ Clothing Online Store',
     summary:
-      'A modern web application designed and built by our team, published live on Vercel.',
+      'A full-stack online store for a kids’ clothing brand — customer storefront plus an admin panel — live on Vercel.',
     description:
-      'FloraRossy is a web application we designed and built end to end and published live on Vercel. (Details to be finalised.)',
+      'FloraRossy is an online store for a kids’ clothing brand: a customer-facing storefront for browsing and buying, backed by an admin panel for managing the catalogue, inventory and orders. Built with React and Ant Design on the frontend and a Node.js backend, with MongoDB Atlas as the database. Designed end to end — from product browsing and cart to checkout — and published live on Vercel.',
     category: 'Web',
-    tags: ['React', 'TypeScript', 'Web'],
+    tags: ['React', 'JavaScript', 'Ant Design', 'Node.js', 'MongoDB'],
     cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
     images: [
       '/projects/florarossy/shot-1.jpg',
@@ -57,10 +57,11 @@ const rawProjects: Project[] = [
       '/projects/florarossy/shot-3.jpg',
     ],
     featured: true,
-    links: {},
+    links: { live: 'https://flora-rossy-online-store-client.vercel.app/' },
     metrics: [
+      { label: 'Type', value: 'Storefront + Admin' },
+      { label: 'Database', value: 'MongoDB Atlas' },
       { label: 'Status', value: 'Live' },
-      { label: 'Hosting', value: 'Vercel' },
     ],
   },
   {
