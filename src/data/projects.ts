@@ -75,7 +75,6 @@ const rawProjects: Project[] = [
     tags: ['React', 'Python', 'LangGraph', 'RAG', 'Weaviate', 'PostgreSQL'],
     // Warm brown→amber cover to set this AI project apart from the teal ones.
     cover: 'linear-gradient(135deg, #5c3210 0%, #b85c1e 55%, #e0913f 100%)',
-    featured: true,
     clientProject: true,
     links: {},
     metrics: [
@@ -94,7 +93,6 @@ const rawProjects: Project[] = [
     category: 'Platform',
     tags: ['React', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS'],
     cover: 'linear-gradient(160deg, #6b3a12 0%, #c2701f 55%, #e8a24d 100%)',
-    featured: true,
     clientProject: true,
     links: {},
     metrics: [
@@ -119,6 +117,7 @@ const rawProjects: Project[] = [
       '/projects/snake-game/shot-2.jpg',
       '/projects/snake-game/shot-3.jpg',
     ],
+    featured: true,
     links: {
       live: 'https://play.google.com/store/apps/details?id=dev.pasindu.snakegame.com',
     },

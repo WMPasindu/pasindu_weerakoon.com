@@ -1,4 +1,4 @@
-import { Button, Card, Carousel, Space, Tag, Typography } from 'antd'
+import { Button, Card, Carousel, Image, Space, Tag, Typography } from 'antd'
 import {
   LinkOutlined,
   GithubOutlined,
@@ -31,13 +31,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.images && project.images.length > 0 ? (
           <div className="project-card__shots">
             <span className="project-card__category">{project.category}</span>
-            <Carousel autoplay autoplaySpeed={3000} draggable dots>
-              {project.images.map((src) => (
-                <div key={src}>
-                  <img src={src} alt={project.title} loading="lazy" />
-                </div>
-              ))}
-            </Carousel>
+            <Image.PreviewGroup>
+              <Carousel autoplay autoplaySpeed={3000} draggable dots>
+                {project.images.map((src) => (
+                  <div key={src}>
+                    <Image
+                      src={src}
+                      alt={project.title}
+                      rootClassName="project-card__shot"
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </Image.PreviewGroup>
           </div>
         ) : (
           <Cover source={project.cover} alt={project.title}>

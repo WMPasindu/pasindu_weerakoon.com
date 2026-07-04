@@ -1251,11 +1251,13 @@ body::after {
 .project-card__shots {
   position: relative;
 }
-.project-card__shots img {
+.project-card__shots .project-card__shot,
+.project-card__shots .project-card__shot img {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
 }
 .project-card__shots .slick-slide {
   line-height: 0;
