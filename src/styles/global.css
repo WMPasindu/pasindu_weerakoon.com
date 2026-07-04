@@ -1246,3 +1246,23 @@ body::after {
 .masonry__carousel .slick-dots li.slick-active button {
   background: #fff;
 }
+
+/* ---- Project screenshot carousel -------------------------------------- */
+.project-card__shots {
+  position: relative;
+}
+.project-card__shots img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+.project-card__shots .slick-slide {
+  line-height: 0;
+}
+.project-card__shots .slick-dots li button {
+  background: rgba(255, 255, 255, 0.65);
+}
+.project-card__shots .slick-dots li.slick-active button {
+  background: #fff;
+}

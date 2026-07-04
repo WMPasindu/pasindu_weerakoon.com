@@ -27,6 +27,11 @@ const rawProjects: Project[] = [
     category: 'Web',
     tags: ['React', 'TypeScript', 'Ant Design', 'Node.js', 'Express', 'SSR'],
     cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
+    images: [
+      '/projects/photolocations/shot-1.jpg',
+      '/projects/photolocations/shot-2.jpg',
+      '/projects/photolocations/shot-3.jpg',
+    ],
     featured: true,
     clientProject: true,
     links: {},
@@ -34,6 +39,28 @@ const rawProjects: Project[] = [
       { label: 'Rendering', value: 'Vite SSR' },
       { label: 'Architecture', value: 'Monorepo' },
       { label: 'SEO', value: 'JSON-LD' },
+    ],
+  },
+  {
+    slug: 'florarossy',
+    title: 'FloraRossy',
+    summary:
+      'A modern web application designed and built by our team, published live on Vercel.',
+    description:
+      'FloraRossy is a web application we designed and built end to end and published live on Vercel. (Details to be finalised.)',
+    category: 'Web',
+    tags: ['React', 'TypeScript', 'Web'],
+    cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
+    images: [
+      '/projects/florarossy/shot-1.jpg',
+      '/projects/florarossy/shot-2.jpg',
+      '/projects/florarossy/shot-3.jpg',
+    ],
+    featured: true,
+    links: {},
+    metrics: [
+      { label: 'Status', value: 'Live' },
+      { label: 'Hosting', value: 'Vercel' },
     ],
   },
   {
@@ -86,6 +113,11 @@ const rawProjects: Project[] = [
     tags: ['React Native', 'TypeScript', 'Game', 'Android'],
     // cover is assigned by category below.
     cover: '',
+    images: [
+      '/projects/snake-game/shot-1.jpg',
+      '/projects/snake-game/shot-2.jpg',
+      '/projects/snake-game/shot-3.jpg',
+    ],
     links: {
       live: 'https://play.google.com/store/apps/details?id=dev.pasindu.snakegame.com',
     },
