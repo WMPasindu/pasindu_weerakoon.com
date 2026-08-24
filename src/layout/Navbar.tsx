@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useCallback, useEffect, useState } from 'react'
 import { Button, Drawer } from 'antd'
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -9,8 +8,11 @@ import { ThemeToggle } from '@/components/common/ThemeToggle'
 import { Container } from '@/components/common/Container'
 import { useIsMobile } from '@/hooks/useMediaQuery'
 
+const SECTION_IDS = siteConfig.nav.map((item) => item.id)
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState<string>('')
   const [open, setOpen] = useState(false)
   const isMobile = useIsMobile()
 
@@ -21,18 +23,51 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Scroll-spy: highlight the section currently nearest the top of the viewport.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+        if (visible[0]) setActive(visible[0].target.id)
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  const goTo = useCallback((id: string) => {
+    setOpen(false)
+    const el = document.getElementById(id)
+    if (!el) return
+    const prefersReduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+    el.scrollIntoView({
+      behavior: prefersReduced ? 'auto' : 'smooth',
+      block: 'start',
+    })
+    // Keep the URL shareable without triggering a router navigation.
+    window.history.replaceState(null, '', `#${id}`)
+  }, [])
+
   const links = siteConfig.nav.map((item) => (
-    <NavLink
-      key={item.to}
-      to={item.to}
-      end={item.to === '/'}
-      className={({ isActive }) =>
-        `nav-link${isActive ? ' nav-link--active' : ''}`
-      }
-      onClick={() => setOpen(false)}
+    <a
+      key={item.id}
+      href={`#${item.id}`}
+      className={`nav-link${active === item.id ? ' nav-link--active' : ''}`}
+      onClick={(event) => {
+        event.preventDefault()
+        goTo(item.id)
+      }}
     >
       {item.label}
-    </NavLink>
+    </a>
   ))
 
   return (
@@ -44,15 +79,28 @@ export function Navbar() {
     >
       <Container>
         <div className="navbar__inner">
-          <Logo />
+          <a
+            href="#top"
+            onClick={(event) => {
+              event.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+              window.history.replaceState(null, '', '/')
+            }}
+          >
+            <Logo />
+          </a>
 
           {!isMobile && <nav className="navbar__links">{links}</nav>}
 
           <div className="navbar__actions">
             <ThemeToggle />
             {!isMobile && (
-              <Button type="primary" shape="round">
-                <Link to="/contact">Let’s talk</Link>
+              <Button
+                type="primary"
+                shape="round"
+                onClick={() => goTo('contact')}
+              >
+                Let’s talk
               </Button>
             )}
             {isMobile && (
@@ -82,9 +130,9 @@ export function Navbar() {
           block
           shape="round"
           style={{ marginTop: 24 }}
-          onClick={() => setOpen(false)}
+          onClick={() => goTo('contact')}
         >
-          <Link to="/contact">Let’s talk</Link>
+          Let’s talk
         </Button>
       </Drawer>
     </motion.header>

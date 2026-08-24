@@ -57,7 +57,9 @@
     />
     <meta name="twitter:image" content="https://pasinduweerakoon.com/portrait.png" />
 
-    <!-- Structured data: Person + WebSite (helps Google understand the entity) -->
+    <!-- Structured data: ProfilePage + Person + WebSite.
+         Gives search engines and AI assistants an unambiguous description of
+         who this is, what they do, where, and what they have built. -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -72,18 +74,39 @@
             "image": "https://pasinduweerakoon.com/portrait.png",
             "jobTitle": "Technical Lead, Software Engineer",
             "email": "mailto:wmpasindu@gmail.com",
-            "description": "Software Engineer and Technical Lead with 9+ years building scalable React web and mobile products, micro-frontend platforms and design systems.",
+            "telephone": "+94715836036",
+            "nationality": "Sri Lankan",
+            "description": "Pasindu Weerakoon is a Software Engineer and Technical Lead based in Colombo, Sri Lanka, with over 9 years of experience building scalable React web and mobile products, micro-frontend platforms and design systems, and leading multi-team engineering units.",
+            "disambiguatingDescription": "Technical Lead and React/frontend architect in Colombo, Sri Lanka; MSc in Information Technology (SLIIT).",
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Technical Lead / Software Engineer",
+              "occupationLocation": {
+                "@type": "City",
+                "name": "Colombo, Sri Lanka"
+              },
+              "skills": "React, TypeScript, JavaScript, Next.js, React Native, Micro-frontends, Mono-repos, Design Systems, Node.js, Python, AWS, CI/CD, Agentic AI, RAG"
+            },
             "worksFor": {
               "@type": "Organization",
-              "name": "1 BillionTech (Pvt) Limited"
+              "name": "1 BillionTech (Pvt) Limited",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Colombo",
+                "addressCountry": "LK"
+              }
             },
             "alumniOf": {
               "@type": "CollegeOrUniversity",
               "name": "Sri Lanka Institute of Information Technology (SLIIT)"
             },
+            "award": [
+              "TMT East Hackathon Winner — Cloud Technologies"
+            ],
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Colombo",
+              "addressRegion": "Western Province",
               "addressCountry": "LK"
             },
             "knowsAbout": [
@@ -91,9 +114,15 @@
               "TypeScript",
               "Frontend Architecture",
               "Micro-frontends",
+              "Mono-repos",
               "Design Systems",
+              "Next.js",
               "React Native",
-              "Software Engineering"
+              "Node.js",
+              "Agentic AI",
+              "Retrieval-Augmented Generation",
+              "Software Engineering",
+              "Technical Leadership"
             ],
             "sameAs": [
               "https://www.linkedin.com/in/pasindu-weerakoon",
@@ -101,11 +130,20 @@
             ]
           },
           {
+            "@type": "ProfilePage",
+            "@id": "https://pasinduweerakoon.com/#profilepage",
+            "url": "https://pasinduweerakoon.com/",
+            "name": "Pasindu Weerakoon — Software Engineer & Technical Lead",
+            "mainEntity": { "@id": "https://pasinduweerakoon.com/#person" },
+            "isPartOf": { "@id": "https://pasinduweerakoon.com/#website" },
+            "inLanguage": "en"
+          },
+          {
             "@type": "WebSite",
             "@id": "https://pasinduweerakoon.com/#website",
             "url": "https://pasinduweerakoon.com/",
             "name": "Pasindu Weerakoon",
-            "description": "Portfolio of Pasindu Weerakoon — Software Engineer & Technical Lead in Sri Lanka.",
+            "description": "Portfolio of Pasindu Weerakoon — Software Engineer & Technical Lead in Colombo, Sri Lanka.",
             "publisher": { "@id": "https://pasinduweerakoon.com/#person" },
             "inLanguage": "en"
           }
@@ -117,7 +155,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>

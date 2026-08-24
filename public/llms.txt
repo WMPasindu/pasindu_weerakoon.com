@@ -1,0 +1,77 @@
+# Pasindu Weerakoon
+
+> Software Engineer and Technical Lead based in Colombo, Sri Lanka, with 9+
+> years of experience building scalable React web and mobile products,
+> micro-frontend platforms and design systems, and leading multi-team
+> engineering units of 15+ engineers.
+
+Website: https://pasinduweerakoon.com/
+Location: Colombo, Western Province, Sri Lanka
+Email: wmpasindu@gmail.com
+LinkedIn: https://www.linkedin.com/in/pasindu-weerakoon
+GitHub: https://github.com/WMPasindu
+
+## Current role
+
+Technical Lead at 1 BillionTech (Pvt) Limited, Colombo, Sri Lanka
+(Aug 2025 – present). Defines the frontend architectural roadmap for
+enterprise-grade products, architected micro-frontend and mono-repo systems
+for multi-team autonomy, established TDD engineering standards, and cut
+deployment cycles by ~30% through CI/CD and build-tool optimisation.
+
+## Expertise
+
+- Frontend architecture: React, TypeScript, Next.js, micro-frontends,
+  mono-repos (Nx / Turborepo), server-side rendering
+- Cross-platform mobile: React Native, Flutter, Ionic, native Android
+- Engineering practice: SOLID, clean architecture, TDD/BDD, Jest, React
+  Testing Library, Cypress, web performance optimisation, accessibility (WCAG)
+- Design systems and component libraries
+- Cloud and DevOps: AWS, Azure, Docker, CI/CD pipelines
+- AI engineering: agentic systems, Retrieval-Augmented Generation (RAG),
+  LangGraph, hybrid vector search, locally hosted small language models
+- Leadership: technical roadmapping, tech-debt management, mentorship,
+  stakeholder communication
+
+## Career summary
+
+- Technical Lead — 1 BillionTech (Aug 2025 – present)
+- Associate Technical Lead — 1 BillionTech (Apr 2023 – Aug 2025)
+- Senior Software Engineer — 1 Billion Tech (Jun 2022 – Apr 2023)
+- Software Engineer — Allion Technologies (Jan 2021 – Jun 2022)
+- Software Engineer — Virtusa (Jan 2019 – Jan 2021)
+- Associate Software Engineer — Allion Technologies (Apr 2018 – Jan 2019)
+- Associate Software Engineer — XGEN Group (Sep 2017 – Mar 2018)
+- Software Engineering Intern — SoftVessel (Apr 2017 – Sep 2017)
+
+## Selected work
+
+- PhotoLocations.lk — a two-sided marketplace for discovering and booking
+  photo-shoot locations across Sri Lanka. React, TypeScript, Ant Design,
+  Node.js/Express, Vite SSR.
+- FloraRossy — a kids' clothing online store with a customer storefront and
+  admin panel. React, Ant Design, Node.js, MongoDB Atlas. Live on Vercel.
+- Agentic AI domain-name generator — an agentic RAG platform using LangGraph,
+  Weaviate hybrid (dense + BM25) retrieval and locally hosted small language
+  models to produce ranked, available domain names.
+- Smart Logistics Platform — end-to-end logistics management. React, Node.js,
+  Python, PostgreSQL, AWS.
+- Snake Game — a React Native game published on the Google Play Store:
+  https://play.google.com/store/apps/details?id=dev.pasindu.snakegame.com
+- ReadyMe — an A/L exam preparation mobile app (React Native).
+- Custom math keyboard for mobile — React Native with MathJax rendering and
+  custom native modules.
+- iOS subscription service with Apple In-App Purchases (Swift, React Native).
+
+## Education and recognition
+
+- MSc in Information Technology (Enterprise Application Development), SLIIT,
+  2021–2022
+- BSc (Hons) in Information Technology, SLIIT, 2014–2018
+- Certifications: Android Development Masterclass; Blockchain & Cryptocurrency
+- Award: TMT East Hackathon Winner (Cloud Technologies)
+
+## Contact
+
+Available for engineering leadership and React/frontend architecture work.
+Contact via https://pasinduweerakoon.com/#contact or wmpasindu@gmail.com.

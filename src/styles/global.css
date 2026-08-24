@@ -20,9 +20,8 @@
   --radius: 16px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Display fonts — Poppins for UI, Caveat for handwritten accents. */
+  /* Display fonts */
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --font-hand: 'Caveat', 'Comic Sans MS', cursive;
   --font-display:
     'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -964,4 +963,10 @@ a {
 }
 .project-card__shots .slick-dots li.slick-active button {
   background: #fff;
+}
+
+/* ---- Single-page anchors ---------------------------------------------- */
+/* Offset anchored scrolling so sections clear the sticky navbar. */
+section[id] {
+  scroll-margin-top: 84px;
 }

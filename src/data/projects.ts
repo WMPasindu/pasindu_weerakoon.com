@@ -27,11 +27,6 @@ const rawProjects: Project[] = [
     category: 'Web',
     tags: ['React', 'TypeScript', 'Ant Design', 'Node.js', 'Express', 'SSR'],
     cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
-    images: [
-      '/projects/photolocations/shot-1.jpg',
-      '/projects/photolocations/shot-2.jpg',
-      '/projects/photolocations/shot-3.jpg',
-    ],
     featured: true,
     clientProject: true,
     links: {},
@@ -51,11 +46,6 @@ const rawProjects: Project[] = [
     category: 'Web',
     tags: ['React', 'JavaScript', 'Ant Design', 'Node.js', 'MongoDB'],
     cover: 'linear-gradient(135deg, #3d2207 0%, #8a4417 60%, #b0581c 100%)',
-    images: [
-      '/projects/florarossy/shot-1.jpg',
-      '/projects/florarossy/shot-2.jpg',
-      '/projects/florarossy/shot-3.jpg',
-    ],
     featured: true,
     links: { live: 'https://flora-rossy-online-store-client.vercel.app/' },
     metrics: [
@@ -112,11 +102,6 @@ const rawProjects: Project[] = [
     tags: ['React Native', 'TypeScript', 'Game', 'Android'],
     // cover is assigned by category below.
     cover: '',
-    images: [
-      '/projects/snake-game/shot-1.jpg',
-      '/projects/snake-game/shot-2.jpg',
-      '/projects/snake-game/shot-3.jpg',
-    ],
     featured: true,
     links: {
       live: 'https://play.google.com/store/apps/details?id=dev.pasindu.snakegame.com',

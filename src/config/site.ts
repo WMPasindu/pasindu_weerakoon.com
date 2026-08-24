@@ -5,7 +5,8 @@
 
 export interface NavItem {
   label: string
-  to: string
+  /** Section id on the single page (used for anchor links and scroll-spy). */
+  id: string
 }
 
 export const siteConfig = {
@@ -40,14 +41,14 @@ export const siteConfig = {
     'https://www.linkedin.com/in/pasindu-weerakoon',
     'https://github.com/WMPasindu',
   ],
-  /** Primary navigation, also drives the mobile drawer. */
+  /** Primary navigation — in-page sections. Also drives the mobile drawer. */
   nav: [
-    { label: 'Home', to: '/' },
-    { label: 'About', to: '/about' },
-    { label: 'Projects', to: '/projects' },
-    { label: 'Articles', to: '/articles' },
-    { label: 'Gallery', to: '/gallery' },
-    { label: 'Contact', to: '/contact' },
+    { label: 'About', id: 'about' },
+    { label: 'Experience', id: 'experience' },
+    { label: 'Skills', id: 'skills' },
+    { label: 'Projects', id: 'projects' },
+    { label: 'Gallery', id: 'gallery' },
+    { label: 'Contact', id: 'contact' },
   ] satisfies NavItem[],
 } as const
 

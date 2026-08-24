@@ -79,8 +79,6 @@ export interface Project {
   category: ProjectCategory
   tags: string[]
   cover: string
-  /** Real screenshots — when present, the card shows an auto-sliding carousel. */
-  images?: string[]
   /** Marks the project for the "featured" home section. */
   featured?: boolean
   /** Client engagement (vs. an internal case study); shows a subtle label. */
@@ -94,19 +92,6 @@ export interface Project {
   metrics?: { label: string; value: string }[]
 }
 
-export interface Article {
-  slug: string
-  title: string
-  description: string
-  /** ISO date string. */
-  date: string
-  readingMinutes: number
-  tags: string[]
-  cover: string
-  /** Markdown body imported via Vite `?raw`. */
-  body: string
-  featured?: boolean
-}
 
 export interface GalleryImage {
   id: string

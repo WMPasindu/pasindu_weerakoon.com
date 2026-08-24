@@ -12,22 +12,16 @@
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc -b --noEmit",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"*.{ts,json,html}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
-    "generate:placeholders": "node scripts/generate-placeholders.mjs"
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
     "@ant-design/icons": "^6.2.5",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "antd": "^6.4.3",
     "framer-motion": "^12.40.0",
-    "highlight.js": "^11.11.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.16.0",
-    "rehype-highlight": "^7.0.2",
-    "rehype-raw": "^7.0.0",
-    "remark-gfm": "^4.0.1"
+    "react-router-dom": "^7.16.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

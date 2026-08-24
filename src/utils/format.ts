@@ -8,9 +8,6 @@ export function formatDate(iso: string): string {
   })
 }
 
-export function formatReadingTime(minutes: number): string {
-  return `${minutes} min read`
-}
 
 /** Estimate reading time from raw markdown at ~200 wpm. */
 export function estimateReadingMinutes(markdown: string): number {
