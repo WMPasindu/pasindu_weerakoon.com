@@ -9,6 +9,7 @@ export function ProjectsSection() {
   return (
     <Section id="projects">
       <SectionHeading
+        index="04"
         eyebrow="Portfolio"
         title="Selected work"
         subtitle="Products, platforms and applications I have led and built."

@@ -69,6 +69,7 @@ export function ContactSection() {
   return (
     <Section id="contact">
       <SectionHeading
+        index="06"
         eyebrow="Contact"
         title="Let’s talk"
         subtitle="Have a role, a project, or just want to say hello? Drop me a line."

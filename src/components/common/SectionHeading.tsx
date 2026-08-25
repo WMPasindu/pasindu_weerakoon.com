@@ -1,9 +1,8 @@
-import { Typography } from 'antd'
 import { Reveal } from '@/components/animations/Reveal'
 
-const { Title, Paragraph } = Typography
-
 interface SectionHeadingProps {
+  /** Two-digit index rendered as a designed section marker, e.g. "01". */
+  index?: string
   /** Small uppercase label above the title. */
   eyebrow?: string
   title: string
@@ -11,8 +10,9 @@ interface SectionHeadingProps {
   align?: 'left' | 'center'
 }
 
-/** Consistent, animated heading used to introduce every major section. */
+/** Consistent, numbered heading used to introduce every major section. */
 export function SectionHeading({
+  index,
   eyebrow,
   title,
   subtitle,
@@ -20,24 +20,15 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <Reveal>
-      <div
-        style={{
-          textAlign: align,
-          maxWidth: align === 'center' ? 720 : undefined,
-          marginInline: align === 'center' ? 'auto' : undefined,
-          marginBottom: 'clamp(28px, 4vw, 48px)',
-        }}
-      >
-        {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-        <Title level={2} style={{ marginTop: eyebrow ? 12 : 0 }}>
-          {title}
-        </Title>
-        {subtitle && (
-          <Paragraph type="secondary" style={{ fontSize: 17, marginBottom: 0 }}>
-            {subtitle}
-          </Paragraph>
-        )}
-      </div>
+      <header className={`sec-head${align === 'center' ? ' sec-head--center' : ''}`}>
+        <div className="sec-head__label">
+          {index && <span className="sec-head__index">{index}</span>}
+          {eyebrow && <span className="sec-head__eyebrow">{eyebrow}</span>}
+          <span className="sec-head__rule" aria-hidden="true" />
+        </div>
+        <h2 className="sec-head__title">{title}</h2>
+        {subtitle && <p className="sec-head__subtitle">{subtitle}</p>}
+      </header>
     </Reveal>
   )
 }

@@ -21,7 +21,11 @@ export function AboutSection() {
     <Section id="about" muted>
       <div className="about">
         <Reveal>
-          <span className="eyebrow">About</span>
+          <div className="sec-head__label">
+            <span className="sec-head__index">01</span>
+            <span className="sec-head__eyebrow">About</span>
+            <span className="sec-head__rule" aria-hidden="true" />
+          </div>
           <h2 className="about__headline">{profile.headline}</h2>
           {profile.bio.map((para, i) => (
             <Paragraph key={i} className="about__bio">

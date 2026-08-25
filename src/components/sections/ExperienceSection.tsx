@@ -14,6 +14,7 @@ export function ExperienceSection() {
   return (
     <Section id="experience">
       <SectionHeading
+        index="02"
         eyebrow="Career"
         title="Experience"
         subtitle="Nine years of building products and the teams behind them. Expand any role for detail."

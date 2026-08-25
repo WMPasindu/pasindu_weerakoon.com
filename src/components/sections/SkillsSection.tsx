@@ -8,6 +8,7 @@ export function SkillsSection() {
   return (
     <Section id="skills" muted>
       <SectionHeading
+        index="03"
         eyebrow="Toolbox"
         title="Skills & expertise"
         subtitle="The technologies and disciplines I work in every day."

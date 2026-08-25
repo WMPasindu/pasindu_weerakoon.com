@@ -26,6 +26,7 @@ export function GallerySection() {
   return (
     <Section id="gallery" muted>
       <SectionHeading
+        index="05"
         eyebrow="Gallery"
         title="Moments"
         subtitle="A few snapshots from the work and the life around it."

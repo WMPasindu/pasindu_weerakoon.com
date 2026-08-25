@@ -54,11 +54,14 @@ export function HomePage() {
         />
         <Stagger>
           <Row gutter={[24, 24]}>
-            {whatIDo.map((item) => (
+            {whatIDo.map((item, index) => (
               <Col xs={24} md={8} key={item.title}>
                 <StaggerItem className="grid-cell">
                   <Card className="feature-card" variant="borderless">
-                    <span className="feature-card__icon">{item.icon}</span>
+                    <div className="feature-card__top">
+                      <span className="feature-card__icon">{item.icon}</span>
+                      <span className="feature-card__no">{`0${index + 1}`}</span>
+                    </div>
                     <Title level={4} style={{ marginBottom: 8 }}>
                       {item.title}
                     </Title>
