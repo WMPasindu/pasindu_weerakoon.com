@@ -30,6 +30,8 @@ export interface Profile {
   phone?: string
   /** One-paragraph elevator pitch. */
   summary: string
+  /** One-line positioning statement. */
+  headline: string
   /** Longer bio paragraphs for the About page. */
   bio: string[]
   avatar: string

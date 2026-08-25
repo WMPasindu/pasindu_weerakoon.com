@@ -1,11 +1,10 @@
-import { Col, Row } from 'antd'
+import { LinkOutlined } from '@ant-design/icons'
 import { Section } from '@/components/common/Section'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { Stagger, StaggerItem } from '@/components/animations/Stagger'
-import { ProjectCard } from '@/components/feature/ProjectCard'
 import { projects } from '@/data/projects'
 
-/** All projects, newest and most significant first. */
+/** Compact, scannable project list — category, title, one-liner, stack. */
 export function ProjectsSection() {
   return (
     <Section id="projects">
@@ -15,15 +14,54 @@ export function ProjectsSection() {
         subtitle="Products, platforms and applications I have led and built."
       />
       <Stagger>
-        <Row gutter={[24, 24]}>
+        <div className="work">
           {projects.map((project) => (
-            <Col xs={24} md={12} lg={8} key={project.slug}>
-              <StaggerItem className="grid-cell">
-                <ProjectCard project={project} />
-              </StaggerItem>
-            </Col>
+            <StaggerItem key={project.slug}>
+              <article
+                className={`work__item work__item--${project.category
+                  .toLowerCase()
+                  .replace(/\s+/g, '-')}`}
+              >
+                <header className="work__head">
+                  <span className="work__category">{project.category}</span>
+                  {project.links.live ? (
+                    <a
+                      className="work__link"
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LinkOutlined /> Live
+                    </a>
+                  ) : (
+                    project.clientProject && (
+                      <span className="work__badge">Client project</span>
+                    )
+                  )}
+                </header>
+
+                <h3 className="work__title">{project.title}</h3>
+                <p className="work__summary">{project.summary}</p>
+
+                {project.metrics && (
+                  <p className="work__metrics">
+                    {project.metrics.map((m) => (
+                      <span key={m.label}>
+                        <strong>{m.value}</strong> {m.label}
+                      </span>
+                    ))}
+                  </p>
+                )}
+
+                <ul className="work__tags">
+                  {project.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </article>
+            </StaggerItem>
           ))}
-        </Row>
+        </div>
       </Stagger>
     </Section>
   )

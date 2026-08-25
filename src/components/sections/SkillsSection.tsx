@@ -1,13 +1,9 @@
-import { Col, Row, Typography } from 'antd'
 import { Section } from '@/components/common/Section'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { Reveal } from '@/components/animations/Reveal'
-import { SkillBar } from '@/components/feature/SkillBar'
 import { skillCategories, skillsByCategory } from '@/data/skills'
 
-const { Title } = Typography
-
-/** Skills grouped by discipline, with animated proficiency bars. */
+/** Skills as compact chip groups — the full toolbox at a glance. */
 export function SkillsSection() {
   return (
     <Section id="skills" muted>
@@ -16,20 +12,22 @@ export function SkillsSection() {
         title="Skills & expertise"
         subtitle="The technologies and disciplines I work in every day."
       />
-      <Row gutter={[40, 40]}>
-        {skillCategories.map((category) => (
-          <Col xs={24} md={12} key={category}>
-            <Reveal>
-              <Title level={5} className="skill-group__title">
-                {category}
-              </Title>
-              {skillsByCategory(category).map((skill) => (
-                <SkillBar key={skill.name} skill={skill} />
-              ))}
-            </Reveal>
-          </Col>
-        ))}
-      </Row>
+      <Reveal>
+        <div className="skills">
+          {skillCategories.map((category) => (
+            <div className="skills__group" key={category}>
+              <h3 className="skills__title">{category}</h3>
+              <ul className="skills__list">
+                {skillsByCategory(category).map((skill) => (
+                  <li className="skills__chip" key={skill.name}>
+                    {skill.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Reveal>
     </Section>
   )
 }

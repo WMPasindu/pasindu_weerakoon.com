@@ -1,57 +1,57 @@
-import { Space, Tag, Timeline, Typography } from 'antd'
+import { Tag } from 'antd'
+import { DownOutlined } from '@ant-design/icons'
 import { Section } from '@/components/common/Section'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { Reveal } from '@/components/animations/Reveal'
 import { experience } from '@/data/experience'
 
-const { Title, Paragraph, Text } = Typography
-
-/** Chronological career timeline. */
+/**
+ * Compact career list. Each role is a native <details> row — collapsed by
+ * default to keep the page short, but the detail stays in the DOM so search
+ * engines and AI crawlers still read every highlight.
+ */
 export function ExperienceSection() {
   return (
     <Section id="experience">
       <SectionHeading
         eyebrow="Career"
         title="Experience"
-        subtitle="A track record of leading teams and shipping products that scale."
+        subtitle="Nine years of building products and the teams behind them. Expand any role for detail."
       />
       <Reveal>
-        <Timeline
-          mode="left"
-          className="experience-timeline"
-          items={experience.map((job) => ({
-            children: (
-              <article className="experience-item">
-                <div className="experience-item__head">
-                  <Title level={4} style={{ marginBottom: 2 }}>
-                    {job.role}
-                  </Title>
-                  <Text strong type="secondary">
-                    {job.company} · {job.location}
-                  </Text>
-                </div>
-                <Text type="secondary" className="experience-item__period">
-                  {job.period}
-                </Text>
-                <Paragraph style={{ marginTop: 12 }}>
-                  {job.description}
-                </Paragraph>
-                <ul className="experience-item__highlights">
+        <div className="roles">
+          {experience.map((job, index) => (
+            <details
+              className="role"
+              key={`${job.company}-${job.period}`}
+              open={index === 0}
+            >
+              <summary className="role__summary">
+                <span className="role__period">{job.period}</span>
+                <span className="role__title">
+                  <strong>{job.role}</strong>
+                  <span className="role__company">{job.company}</span>
+                </span>
+                <DownOutlined className="role__chevron" aria-hidden="true" />
+              </summary>
+              <div className="role__body">
+                <p className="role__desc">{job.description}</p>
+                <ul className="role__highlights">
                   {job.highlights.map((h) => (
                     <li key={h}>{h}</li>
                   ))}
                 </ul>
-                <Space size={[6, 6]} wrap>
+                <div className="role__tags">
                   {job.tags.map((tag) => (
                     <Tag key={tag} bordered={false}>
                       {tag}
                     </Tag>
                   ))}
-                </Space>
-              </article>
-            ),
-          }))}
-        />
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
       </Reveal>
     </Section>
   )

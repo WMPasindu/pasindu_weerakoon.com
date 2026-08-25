@@ -25,10 +25,10 @@ export const profile: Profile = {
   phone: '+94 71 583 6036',
   summary:
     'Strategic Senior Technical Lead with 9+ years in frontend engineering and architectural design — building scalable web ecosystems in React, leading multi-team units of 15+ engineers, and aligning technical roadmaps with business goals.',
+  headline: 'I turn complex systems into clean architecture — and engineers into leaders.',
   bio: [
-    'I am a Technical Lead and frontend architect with over nine years of experience building scalable web and cross-platform mobile products. I currently lead frontend engineering at 1 BillionTech, where I define the architectural roadmap for enterprise-grade products and shape the engineering culture across multiple teams.',
-    'My focus is the intersection of architecture and delivery — micro-frontends, mono-repos, design systems, and the testing and CI practices that let teams move fast without breaking things. I have led the migration of a large healthcare platform from React 16 to React 18 with Next.js (improving performance ~25%), cut deployment cycles by 30% with CI/CD optimisation, and reduced user-perceived latency by 40% on critical search experiences.',
-    'Beyond the code, I care deeply about people. I mentor mid-level and senior engineers, run TDD/clean-architecture programmes, and represent the technical voice with senior business stakeholders. I hold an MSc in IT (Enterprise Application Development) and a BSc Hons in IT, both from SLIIT.',
+    'I am a Technical Lead at 1 BillionTech with 9+ years in frontend engineering and architecture. I design React platforms that scale — micro-frontends, mono-repos and design systems — and lead the teams that build them.',
+    'My work sits where architecture meets delivery: cutting deployment cycles by 30%, lifting performance 25% on a healthcare platform, and coaching 15+ engineers on TDD and clean architecture.',
   ],
   avatar: '/avatar.svg',
   socials: [

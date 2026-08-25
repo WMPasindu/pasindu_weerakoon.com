@@ -1,80 +1,52 @@
-import { Col, Row, Space, Tag, Typography } from 'antd'
-import { EnvironmentOutlined } from '@ant-design/icons'
+import { Typography } from 'antd'
 import { Section } from '@/components/common/Section'
-import { SectionHeading } from '@/components/common/SectionHeading'
 import { Reveal } from '@/components/animations/Reveal'
-import { SocialLinks } from '@/components/common/SocialLinks'
 import { profile } from '@/data/profile'
 import { awards, certifications, education } from '@/data/credentials'
 
-const { Title, Paragraph, Text } = Typography
+const { Paragraph } = Typography
 
-/** Biography, location, credentials and recognition. */
+const glance = [
+  { label: 'Role', value: 'Technical Lead · 1 BillionTech' },
+  { label: 'Based in', value: 'Colombo, Sri Lanka' },
+  { label: 'Focus', value: 'React · Frontend architecture · Design systems' },
+  { label: 'Experience', value: '9+ years · 15+ engineers led' },
+  { label: 'Education', value: `${education[0].degree}, SLIIT` },
+  { label: 'Open to', value: 'Leadership & architecture roles' },
+]
+
+/** A short, high-signal introduction plus an at-a-glance facts grid. */
 export function AboutSection() {
   return (
     <Section id="about" muted>
-      <SectionHeading
-        eyebrow="About"
-        title="Who I am"
-        subtitle="Engineering leadership grounded in hands-on architecture and craft."
-      />
-
-      <Row gutter={[48, 40]}>
-        <Col xs={24} lg={14}>
-          <Reveal>
-            <Paragraph type="secondary" style={{ marginBottom: 16 }}>
-              <EnvironmentOutlined /> {profile.location}
+      <div className="about">
+        <Reveal>
+          <span className="eyebrow">About</span>
+          <h2 className="about__headline">{profile.headline}</h2>
+          {profile.bio.map((para, i) => (
+            <Paragraph key={i} className="about__bio">
+              {para}
             </Paragraph>
-            {profile.bio.map((para, i) => (
-              <Paragraph key={i} style={{ fontSize: 16 }}>
-                {para}
-              </Paragraph>
-            ))}
-            <Space style={{ marginTop: 8 }}>
-              <SocialLinks />
-            </Space>
-          </Reveal>
-        </Col>
+          ))}
+        </Reveal>
 
-        <Col xs={24} lg={10}>
-          <Reveal>
-            <Title level={5} className="skill-group__title">
-              Education
-            </Title>
-            {education.map((item) => (
-              <div key={item.degree} className="credential">
-                <div className="credential__head">
-                  <Text strong>{item.degree}</Text>
-                  <Text type="secondary">{item.period}</Text>
-                </div>
-                <Paragraph type="secondary" style={{ marginBottom: 0 }}>
-                  {item.field} · {item.institution}
-                </Paragraph>
+        <Reveal>
+          <dl className="glance">
+            {glance.map((item) => (
+              <div className="glance__item" key={item.label}>
+                <dt className="glance__label">{item.label}</dt>
+                <dd className="glance__value">{item.value}</dd>
               </div>
             ))}
+          </dl>
 
-            <Title level={5} className="skill-group__title" style={{ marginTop: 28 }}>
-              Certifications
-            </Title>
-            <Space size={[8, 8]} wrap style={{ marginBottom: 24 }}>
-              {certifications.map((cert) => (
-                <Tag key={cert} bordered={false}>
-                  {cert}
-                </Tag>
-              ))}
-            </Space>
-
-            <Title level={5} className="skill-group__title">
-              Awards
-            </Title>
-            {awards.map((a) => (
-              <Paragraph key={a} style={{ marginBottom: 8, fontWeight: 500 }}>
-                {a}
-              </Paragraph>
-            ))}
-          </Reveal>
-        </Col>
-      </Row>
+          <p className="about__credentials">
+            <strong>Certifications:</strong> {certifications.join(' · ')}
+            <span className="about__sep">|</span>
+            <strong>Award:</strong> {awards.join(' · ')}
+          </p>
+        </Reveal>
+      </div>
     </Section>
   )
 }
