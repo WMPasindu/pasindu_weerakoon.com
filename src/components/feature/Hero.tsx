@@ -8,10 +8,22 @@ import { scrollToSection } from '@/utils/scroll'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
+/** Four-point sparkle used either side of the top pill. */
+function Sparkle() {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+      <path
+        d="M12 0c.7 6.3 5 10.6 12 12-7 1.4-11.3 5.7-12 12-.7-6.3-5-10.6-12-12C7 10.6 11.3 6.3 12 0z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 /**
- * Clean, professional two-column hero: an introduction, role, summary, CTAs,
- * a few key facts and social links on the left; a framed portrait on the
- * right. Restrained motion only — a single fade-up on load.
+ * Poster-style hero: an outlined name pill, a display headline with the key
+ * word highlighted, an oval portrait flanked by tags, and a card carrying the
+ * pitch, calls to action and headline numbers.
  */
 export function Hero() {
   const prefersReduced = useReducedMotion()
@@ -20,30 +32,49 @@ export function Hero() {
     prefersReduced
       ? {}
       : {
-          initial: { opacity: 0, y: 18 },
+          initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.55, ease, delay },
+          transition: { duration: 0.6, ease, delay },
         }
 
   return (
     <section className="hero">
-      <Container size="wide">
-        <div className="hero__grid">
-          <div className="hero__intro">
-            <motion.p className="hero__eyebrow" {...rise(0)}>
-              Software Engineer · Technical Lead
-            </motion.p>
-            <motion.h1 className="hero__title" {...rise(0.06)}>
-              {profile.name}
-            </motion.h1>
-            <motion.p className="hero__role" {...rise(0.12)}>
-              {profile.title}
-            </motion.p>
-            <motion.p className="hero__summary" {...rise(0.18)}>
-              {profile.summary}
-            </motion.p>
+      <Container>
+        <div className="hero__poster">
+          <motion.p className="hero__pill" {...rise(0)}>
+            <Sparkle />
+            <span>{profile.name}</span>
+            <Sparkle />
+          </motion.p>
 
-            <motion.div className="hero__cta" {...rise(0.24)}>
+          <motion.h1 className="hero__display" {...rise(0.06)}>
+            Technical <mark className="hero__mark">Lead</mark>
+            <br />
+            &amp; Frontend Architect
+          </motion.h1>
+
+          <motion.p className="hero__kicker" {...rise(0.12)}>
+            Building scalable React ecosystems &amp; the teams behind them
+          </motion.p>
+
+          {/* Portrait with flanking tags */}
+          <motion.div className="hero__figure" {...rise(0.18)}>
+            <span className="hero__tag hero__tag--left">
+              9+ Years Experience
+            </span>
+            <div className="hero__oval">
+              <img src={profile.portrait} alt={profile.name} />
+            </div>
+            <span className="hero__tag hero__tag--right">
+              React &amp; AI Engineering
+            </span>
+          </motion.div>
+
+          {/* Card overlapping the portrait */}
+          <motion.div className="hero__card" {...rise(0.24)}>
+            <p className="hero__blurb">{profile.summary}</p>
+
+            <div className="hero__cta">
               <Button
                 type="primary"
                 size="large"
@@ -67,33 +98,19 @@ export function Hero() {
               >
                 View my work
               </Button>
-            </motion.div>
+            </div>
 
-            <motion.div className="hero__facts" {...rise(0.3)}>
+            <div className="hero__facts">
               {profile.stats.slice(0, 3).map((stat) => (
                 <div className="hero__fact" key={stat.label}>
                   <span className="hero__fact-value">{stat.value}</span>
                   <span className="hero__fact-label">{stat.label}</span>
                 </div>
               ))}
-            </motion.div>
-
-            <motion.div className="hero__socials" {...rise(0.36)}>
-              <SocialLinks size="middle" />
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="hero__photo"
-            {...(prefersReduced
-              ? {}
-              : {
-                  initial: { opacity: 0, scale: 0.98 },
-                  animate: { opacity: 1, scale: 1 },
-                  transition: { duration: 0.7, ease, delay: 0.15 },
-                })}
-          >
-            <img src={profile.portrait} alt={profile.name} />
+              <div className="hero__socials">
+                <SocialLinks size="middle" />
+              </div>
+            </div>
           </motion.div>
         </div>
       </Container>

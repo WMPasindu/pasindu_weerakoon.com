@@ -299,68 +299,177 @@ a {
   padding: 12px 14px;
 }
 
-/* ---- Hero (professional) ---------------------------------------------- */
+/* ---- Hero (poster) ----------------------------------------------------- */
 
 .hero {
   position: relative;
   background: var(--bg);
-}
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: clamp(32px, 5vw, 80px);
-  min-height: min(720px, calc(100svh - 84px));
-  padding-block: clamp(40px, 6vw, 88px);
+  padding-block: clamp(28px, 4vw, 56px) clamp(40px, 6vw, 88px);
 }
 
-/* Left — introduction */
-.hero__intro {
-  max-width: 620px;
+.hero__poster {
+  position: relative;
+  max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
 }
-.hero__eyebrow {
-  margin: 0 0 14px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+
+/* Outlined name pill with sparkles */
+.hero__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 5vw, 56px);
+  margin: 0 auto;
+  padding: 9px clamp(20px, 4vw, 34px);
+  border: 1.5px solid var(--text);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent);
-}
-.hero__title {
-  margin: 0 0 10px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2.4rem, 4.6vw, 3.8rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
   color: var(--text);
 }
-.hero__role {
-  margin: 0 0 20px;
-  font-weight: 600;
-  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-  color: var(--primary);
+.hero__pill svg {
+  color: var(--accent);
+  flex: none;
 }
-.hero__summary {
-  margin: 0 0 28px;
-  max-width: 52ch;
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
-  line-height: 1.7;
+
+/* Display headline with a highlighted word */
+.hero__display {
+  margin: clamp(20px, 3vw, 32px) 0 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 6.4vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+.hero__mark {
+  background: var(--accent);
+  color: var(--ink-panel);
+  padding: 0 0.12em 0.04em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hero__kicker {
+  margin: 16px auto 0;
+  max-width: 46ch;
+  font-size: clamp(0.8rem, 1.1vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Portrait + flanking tags */
+.hero__figure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(22px, 3vw, 36px);
+}
+.hero__oval {
+  position: relative;
+  z-index: 1;
+  width: clamp(230px, 30vw, 330px);
+  aspect-ratio: 0.82;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--surface-muted), var(--bg));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero__oval img {
+  width: 96%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Speech-bubble tags either side of the portrait */
+.hero__tag {
+  position: absolute;
+  /* Shoulder height, so the bubbles never cover the face. */
+  top: 44%;
+  z-index: 2;
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+/* The little pointer under each bubble */
+.hero__tag::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid var(--primary);
+}
+.hero__tag--left {
+  right: 58%;
+}
+.hero__tag--left::after {
+  right: 16px;
+  border-left: 10px solid transparent;
+}
+.hero__tag--right {
+  left: 58%;
+  background: var(--accent);
+  color: var(--ink-panel);
+}
+.hero__tag--right::after {
+  left: 16px;
+  border-right: 10px solid transparent;
+  border-top-color: var(--accent);
+}
+
+/* Card overlapping the portrait */
+.hero__card {
+  position: relative;
+  z-index: 3;
+  margin-top: clamp(-90px, -9vw, -60px);
+  padding: clamp(80px, 9vw, 104px) clamp(22px, 4vw, 44px) clamp(24px, 3vw, 32px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: var(--shadow-sm);
+}
+.hero__blurb {
+  margin: 0 auto;
+  max-width: 62ch;
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.75;
   color: var(--text-secondary);
 }
 .hero__cta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
+  margin-top: 24px;
 }
 
-/* Key facts */
+/* Headline numbers + socials */
 .hero__facts {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(28px, 4vw, 56px);
-  margin-top: 36px;
-  padding-top: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 4vw, 48px);
+  margin-top: 28px;
+  padding-top: 24px;
   border-top: 1px solid var(--border);
 }
 .hero__fact {
@@ -371,68 +480,48 @@ a {
 .hero__fact-value {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
   line-height: 1;
   color: var(--text);
 }
 .hero__fact-label {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
 }
 .hero__socials {
-  margin-top: 28px;
+  margin-left: auto;
 }
 
-/* Right — framed portrait */
-.hero__photo {
-  justify-self: center;
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4 / 5;
-  border-radius: 24px;
-  overflow: hidden;
-  background:
-    radial-gradient(120% 90% at 50% 12%, var(--surface-muted), var(--bg) 78%);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.hero__photo img {
-  width: 94%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .hero__grid {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    gap: 36px;
-    padding-block: clamp(32px, 8vw, 56px);
-    text-align: center;
+@media (max-width: 720px) {
+  .hero__pill {
+    gap: 14px;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
   }
-  .hero__intro {
-    max-width: 640px;
-    margin-inline: auto;
-    order: 1;
+  /* Stack the tags above/below so they never overlap the face */
+  .hero__tag {
+    top: auto;
+    font-size: 0.78rem;
+    padding: 7px 13px;
   }
-  .hero__summary {
-    margin-inline: auto;
+  .hero__tag--left {
+    right: auto;
+    left: 0;
+    top: 4%;
   }
-  .hero__cta,
-  .hero__facts,
+  .hero__tag--right {
+    left: auto;
+    right: 0;
+    top: 4%;
+  }
   .hero__socials {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
-  .hero__photo {
-    order: 0;
-    max-width: 340px;
-  }
 }
+
 /* ---- Stats strip ------------------------------------------------------- */
 
 .stats-strip {
