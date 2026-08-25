@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
 import { Button } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons'
 import { motion, useReducedMotion } from 'framer-motion'
 import { profile } from '@/data/profile'
 import { Container } from '@/components/common/Container'
 import { SocialLinks } from '@/components/common/SocialLinks'
+import { scrollToSection } from '@/utils/scroll'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -44,13 +44,28 @@ export function Hero() {
             </motion.p>
 
             <motion.div className="hero__cta" {...rise(0.24)}>
-              <Button type="primary" size="large" shape="round">
-                <Link to="/projects">
-                  View Work <ArrowRightOutlined />
-                </Link>
+              <Button
+                type="primary"
+                size="large"
+                shape="round"
+                href="#contact"
+                onClick={(event) => {
+                  event.preventDefault()
+                  scrollToSection('contact')
+                }}
+              >
+                Work with me <ArrowRightOutlined />
               </Button>
-              <Button size="large" shape="round">
-                <Link to="/contact">Get in touch</Link>
+              <Button
+                size="large"
+                shape="round"
+                href="#projects"
+                onClick={(event) => {
+                  event.preventDefault()
+                  scrollToSection('projects')
+                }}
+              >
+                View my work
               </Button>
             </motion.div>
 

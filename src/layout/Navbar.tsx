@@ -7,6 +7,7 @@ import { Logo } from '@/components/common/Logo'
 import { ThemeToggle } from '@/components/common/ThemeToggle'
 import { Container } from '@/components/common/Container'
 import { useIsMobile } from '@/hooks/useMediaQuery'
+import { scrollToSection } from '@/utils/scroll'
 
 const SECTION_IDS = siteConfig.nav.map((item) => item.id)
 
@@ -43,17 +44,7 @@ export function Navbar() {
 
   const goTo = useCallback((id: string) => {
     setOpen(false)
-    const el = document.getElementById(id)
-    if (!el) return
-    const prefersReduced = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    el.scrollIntoView({
-      behavior: prefersReduced ? 'auto' : 'smooth',
-      block: 'start',
-    })
-    // Keep the URL shareable without triggering a router navigation.
-    window.history.replaceState(null, '', `#${id}`)
+    scrollToSection(id)
   }, [])
 
   const links = siteConfig.nav.map((item) => (
