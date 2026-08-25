@@ -1059,10 +1059,26 @@ section[id] {
 }
 .glance__value {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   font-size: 0.97rem;
-  font-weight: 600;
   line-height: 1.45;
   color: var(--text);
+}
+.glance__entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.glance__main {
+  font-weight: 600;
+  color: var(--text);
+}
+.glance__sub {
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 .about__credentials {
   margin: 18px 0 0;

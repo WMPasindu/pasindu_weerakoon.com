@@ -6,16 +6,34 @@ import { awards, certifications, education } from '@/data/credentials'
 
 const { Paragraph } = Typography
 
-const glance = [
-  { label: 'Role', value: 'Technical Lead · 1 BillionTech' },
-  { label: 'Based in', value: 'Colombo, Sri Lanka' },
-  { label: 'Focus', value: 'React · Frontend architecture · Design systems' },
-  { label: 'Experience', value: '9+ years · 15+ engineers led' },
-  { label: 'Education', value: `${education[0].degree}, SLIIT` },
-  { label: 'Open to', value: 'Leadership & architecture roles' },
+interface GlanceEntry {
+  /** Main line. */
+  value: string
+  /** Optional muted supporting line, e.g. institution and dates. */
+  meta?: string
+}
+
+const glance: { label: string; entries: GlanceEntry[] }[] = [
+  {
+    label: 'Role',
+    entries: [
+      { value: 'Technical Lead', meta: '1 BillionTech · Colombo, Sri Lanka' },
+    ],
+  },
+  {
+    label: 'Education',
+    entries: education.map((item) => ({
+      value: item.degree,
+      meta: `${item.institution.replace(/\s*\(.*\)$/, '')} · ${item.period}`,
+    })),
+  },
+  {
+    label: 'Open to',
+    entries: [{ value: 'Leadership & architecture roles' }],
+  },
 ]
 
-/** A short, high-signal introduction plus an at-a-glance facts grid. */
+/** A short, high-signal introduction plus an at-a-glance facts panel. */
 export function AboutSection() {
   return (
     <Section id="about" muted>
@@ -39,7 +57,16 @@ export function AboutSection() {
             {glance.map((item) => (
               <div className="glance__item" key={item.label}>
                 <dt className="glance__label">{item.label}</dt>
-                <dd className="glance__value">{item.value}</dd>
+                <dd className="glance__value">
+                  {item.entries.map((entry) => (
+                    <span className="glance__entry" key={entry.value}>
+                      <span className="glance__main">{entry.value}</span>
+                      {entry.meta && (
+                        <span className="glance__sub">{entry.meta}</span>
+                      )}
+                    </span>
+                  ))}
+                </dd>
               </div>
             ))}
           </dl>
