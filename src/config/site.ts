@@ -47,7 +47,7 @@ export const siteConfig = {
     { label: 'Experience', id: 'experience' },
     { label: 'Skills', id: 'skills' },
     { label: 'Projects', id: 'projects' },
-    { label: 'Gallery', id: 'gallery' },
+    { label: 'Recommendations', id: 'recommendations' },
     { label: 'Contact', id: 'contact' },
   ] satisfies NavItem[],
 } as const

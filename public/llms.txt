@@ -63,6 +63,17 @@ deployment cycles by ~30% through CI/CD and build-tool optimisation.
   custom native modules.
 - iOS subscription service with Apple In-App Purchases (Swift, React Native).
 
+## Peer recommendations
+
+Colleagues and managers who have worked with Pasindu describe him as an
+exceptional professional with exemplary leadership skills, able to inspire and
+guide a team; a rare talent who handles multiple projects and tasks
+simultaneously and dramatically raised team productivity; proactive, result
+oriented and technically sound, with exceptional troubleshooting and analytical
+skills; and someone who keeps a calm mindset under pressure and delivers clean
+code on time. Full recommendations are published on his LinkedIn profile and on
+https://pasinduweerakoon.com/#recommendations
+
 ## Education and recognition
 
 - MSc in Information Technology (Enterprise Application Development), SLIIT,

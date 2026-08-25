@@ -9,7 +9,7 @@ import { AboutSection } from '@/components/sections/AboutSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
 import { SkillsSection } from '@/components/sections/SkillsSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
-import { GallerySection } from '@/components/sections/GallerySection'
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 
@@ -80,7 +80,7 @@ export function HomePage() {
       <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
-      <GallerySection />
+      <TestimonialsSection />
       <ContactSection />
     </PageTransition>
   )
