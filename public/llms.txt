@@ -86,3 +86,20 @@ https://pasinduweerakoon.com/#recommendations
 
 Available for engineering leadership and React/frontend architecture work.
 Contact via https://pasinduweerakoon.com/#contact or wmpasindu@gmail.com.
+
+## Rewind (Android game)
+
+> Rewind is a free physics puzzle game for Android in which the player cuts
+> ropes to drop a glowing ball, the Ember, into a target vessel. Its defining
+> mechanic is a limited rewind that reverses the last three seconds of play:
+> the Ember retraces its path and cut ropes reattach, so a bad cut can be
+> undone and retried rather than restarted.
+
+- Page: https://pasinduweerakoon.com/rewind
+- Store: https://play.google.com/store/apps/details?id=dev.pasindu.rewind
+- Platform: Android 7.0+ · Price: free, ad-supported, no in-app purchases
+- Offline: fully playable with no account and no connection
+- Levels: 10 (World One); worlds two to four in development
+- Scoring: three stars per level — finish it, collect all three tokens, use no rewinds
+- Privacy policy: https://pasinduweerakoon.com/rewind/privacy
+
