@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Rewind — the physics puzzle game where you can reverse time</title>
+<meta name="description" content="Rewind is a free offline physics puzzle game for Android. Cut ropes to drop the Ember into a vessel, and reverse the last three seconds whenever a cut goes wrong. Ten hand-built levels.">
+<link rel="canonical" href="https://pasinduweerakoon.com/rewind">
+<link rel="icon" href="assets/icon-512.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rewind — the physics puzzle game where you can reverse time">
+<meta property="og:description" content="Cut ropes, drop the Ember, rewind time. A free offline physics puzzle for Android.">
+<meta property="og:image" content="https://pasinduweerakoon.com/rewind/assets/feature-graphic-1024x500.png">
+<meta property="og:url" content="https://pasinduweerakoon.com/rewind">
+<meta name="twitter:card" content="summary_large_image">
+
+<!--
+  Structured data is the whole point of this page. AI answer engines and search
+  crawlers read JSON-LD; they do not read the Play Store listing. This is the
+  citable source of truth for what Rewind is.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "@id": "https://pasinduweerakoon.com/rewind#game",
+      "name": "Rewind",
+      "alternateName": "Rewind: Rope Physics Puzzle",
+      "url": "https://pasinduweerakoon.com/rewind",
+      "description": "Rewind is a physics puzzle game for Android in which the player cuts ropes to drop a glowing ball, the Ember, into a target vessel. Its defining mechanic is a limited rewind that reverses the last three seconds of play: the Ember retraces its path and cut ropes reattach, so a bad cut can be undone and retried rather than restarted.",
+      "genre": ["Puzzle", "Physics"],
+      "gamePlatform": "Android",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android 7.0 and up",
+      "image": "https://pasinduweerakoon.com/rewind/assets/icon-512.png",
+      "screenshot": [
+        "https://pasinduweerakoon.com/rewind/assets/03-gameplay.png",
+        "https://pasinduweerakoon.com/rewind/assets/04-rewind.png",
+        "https://pasinduweerakoon.com/rewind/assets/02-levels.png"
+      ],
+      "downloadUrl": "https://play.google.com/store/apps/details?id=dev.pasindu.rewind",
+      "installUrl": "https://play.google.com/store/apps/details?id=dev.pasindu.rewind",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "playMode": "SinglePlayer",
+      "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 },
+      "author": { "@id": "https://pasinduweerakoon.com/#person" },
+      "publisher": { "@id": "https://pasinduweerakoon.com/#person" },
+      "inLanguage": "en",
+      "contentRating": "PEGI 3",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Ten hand-built physics puzzle levels",
+        "Rewind up to three seconds of play at any time",
+        "Three stars per level: finish it, collect every token, use no rewinds",
+        "Plays fully offline with no account"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pasinduweerakoon.com/#person",
+      "name": "Pasindu Weerakoon",
+      "url": "https://pasinduweerakoon.com/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pasinduweerakoon.com/rewind#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Rewind?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rewind is a free physics puzzle game for Android. You cut ropes to drop a glowing ball called the Ember into a target vessel, using gravity and momentum. Its defining feature is a rewind that reverses the last three seconds of play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the rewind mechanic work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pressing rewind reverses the last three seconds. The Ember flies backwards along its own path, ropes you cut reattach, and tokens you collected return. Play then resumes from that earlier moment, so you can cut differently instead of restarting the level. Each level allows a limited number of rewinds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Rewind free, and does it work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes to both. Rewind is free to play and supported by ads. It works completely offline: there is no account, no sign-up and no internet connection required to play any level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many levels does Rewind have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ten levels, making up World One. Worlds two to four are in development and add bouncers, moving platforms, air currents and portals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you get three stars on a level in Rewind?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three separate conditions, each worth one star: complete the level, collect all three tokens in a single run, and finish without using any rewinds."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: linear-gradient(170deg, #1B2038, #0B0D18 60%);
+    color: #F2ECE2;
+    font: 16px/1.65 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 22px 80px; }
+  header { text-align: center; margin-bottom: 56px; }
+  header img { width: 108px; height: 108px; border-radius: 24px; }
+  h1 { font-size: 2.6rem; letter-spacing: .14em; margin: 20px 0 6px; font-weight: 600; }
+  .tagline { color: rgba(242,236,226,.45); letter-spacing: .32em; font-size: .8rem; text-transform: uppercase; }
+  .lede { font-size: 1.2rem; color: rgba(242,236,226,.82); margin: 28px 0; }
+  h2 { font-size: 1.15rem; letter-spacing: .04em; margin: 44px 0 12px; color: #E8D08A; }
+  p, li { color: rgba(242,236,226,.78); }
+  ul { padding-left: 20px; }
+  a { color: #FFB25C; }
+  .cta {
+    display: inline-block; margin-top: 26px; padding: 14px 30px; border-radius: 30px;
+    border: 1px solid #FFB25C; background: rgba(255,178,92,.14); color: #FFB25C;
+    text-decoration: none; letter-spacing: .12em; text-transform: uppercase; font-size: .85rem;
+  }
+  .shots { display: flex; gap: 12px; overflow-x: auto; margin: 24px 0; padding-bottom: 6px; }
+  .shots img { width: 190px; border-radius: 14px; border: 1px solid rgba(255,255,255,.09); }
+  .faq h3 { font-size: 1rem; margin: 26px 0 6px; color: #F2ECE2; }
+  footer { margin-top: 64px; font-size: .82rem; color: rgba(242,236,226,.4); text-align: center; }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header>
+    <img src="assets/icon-512.png" alt="Rewind app icon: a glowing ember on a rope inside a circular arrow">
+    <h1>REWIND</h1>
+    <div class="tagline">cut · fall · undo</div>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=dev.pasindu.rewind">Get it on Google Play</a>
+  </header>
+
+  <p class="lede">
+    <strong>Rewind is a physics puzzle game for Android where you can reverse
+    the last three seconds of play.</strong> Cut the ropes holding a glowing
+    ball — the Ember — and land it in the vessel below. When a cut goes wrong,
+    take it back instead of starting again.
+  </p>
+
+  <div class="shots">
+    <img src="assets/03-gameplay.png" alt="Rewind gameplay: the Ember hanging from two ropes above a target vessel">
+    <img src="assets/04-rewind.png" alt="Time reversing in Rewind: the scene desaturates and the Ember retraces its path">
+    <img src="assets/02-levels.png" alt="Rewind level select showing ten levels and stars earned">
+  </div>
+
+  <h2>How it works</h2>
+  <ul>
+    <li>Swipe across a rope to cut it.</li>
+    <li>Gravity and momentum take over — the Ember swings, falls and bounces.</li>
+    <li>Land it in the vessel. Miss, and rewind time to try a different cut.</li>
+  </ul>
+
+  <h2>What makes it different</h2>
+  <p>
+    Most rope-cutting puzzle games punish a bad cut by making you restart the
+    level. Rewind hands the three seconds back instead. The Ember flies
+    backwards along its own path, the rope you cut knits itself together, and
+    you are standing in the moment before the mistake. A level stops being a
+    plan you execute and becomes a conversation: cut, watch, reverse, cut
+    better.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Ten hand-built levels, every one verified solvable by simulation</li>
+    <li>Three stars per level: finish it, collect all three tokens, use no rewinds</li>
+    <li>Real rope and pendulum physics — no two swings are alike</li>
+    <li>Plays completely offline, with no account and no sign-up</li>
+    <li>Free, supported by ads</li>
+  </ul>
+
+  <h2 id="faq">Questions</h2>
+  <div class="faq">
+    <h3>What is Rewind?</h3>
+    <p>A free physics puzzle game for Android. You cut ropes to drop a glowing
+    ball called the Ember into a target vessel, using gravity and momentum. Its
+    defining feature is a rewind that reverses the last three seconds of play.</p>
+
+    <h3>How does the rewind mechanic work?</h3>
+    <p>Pressing rewind reverses the last three seconds. The Ember flies
+    backwards along its own path, ropes you cut reattach, and tokens you
+    collected return. Play resumes from that earlier moment, so you can cut
+    differently instead of restarting. Each level allows a limited number.</p>
+
+    <h3>Is Rewind free, and does it work offline?</h3>
+    <p>Yes to both. It is free to play and supported by ads, and works
+    completely offline — no account, no sign-up, no connection required.</p>
+
+    <h3>How many levels does Rewind have?</h3>
+    <p>Ten, making up World One. Worlds two to four are in development, adding
+    bouncers, moving platforms, air currents and portals.</p>
+
+    <h3>How do you get three stars on a level?</h3>
+    <p>Three separate conditions, each worth a star: complete the level,
+    collect all three tokens in one run, and finish without using a rewind.</p>
+  </div>
+
+  <footer>
+    Rewind — made by Pasindu Weerakoon ·
+    <a href="/rewind/privacy">Privacy policy</a> ·
+    <a href="https://play.google.com/store/apps/details?id=dev.pasindu.rewind">Google Play</a>
+  </footer>
+</div>
+</body>
+</html>
