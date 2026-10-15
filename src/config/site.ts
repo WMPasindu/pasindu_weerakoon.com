@@ -13,10 +13,10 @@ export const siteConfig = {
   /** Used in <title>, meta tags and the footer. */
   name: 'Pasindu Weerakoon',
   shortName: 'PW',
-  jobTitle: 'Technical Lead · React & Frontend Architect',
+  jobTitle: 'Technical Lead · React & Frontend Specialist',
   location: 'Colombo, Sri Lanka',
   description:
-    'Portfolio of Pasindu Weerakoon — Technical Lead, Software Engineer and React & Frontend Architect based in Colombo, Sri Lanka. 9+ years building scalable web and mobile products, micro-frontend platforms and design systems.',
+    'Portfolio of Pasindu Weerakoon — Technical Lead, Software Engineer and React & Frontend Specialist based in Colombo, Sri Lanka. 9+ years building scalable web and mobile products, micro-frontend platforms and design systems.',
   /** Keywords the site should be discoverable for. */
   keywords: [
     'Pasindu Weerakoon',

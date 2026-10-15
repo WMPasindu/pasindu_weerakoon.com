@@ -50,7 +50,7 @@ export function Hero() {
           <motion.h1 className="hero__display" {...rise(0.06)}>
             Technical <mark className="hero__mark">Lead</mark>
             <br />
-            &amp; Frontend Architect
+            &amp; Frontend Specialist
           </motion.h1>
 
           <motion.p className="hero__kicker" {...rise(0.12)}>

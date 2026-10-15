@@ -7,7 +7,7 @@ import type { Profile } from './types'
 export const profile: Profile = {
   name: 'Pasindu Weerakoon',
   firstName: 'Pasindu',
-  title: 'Technical Lead · React & Frontend Architect',
+  title: 'Technical Lead · React & Frontend Specialist',
   roleLines: ['Technical', 'Lead &', 'Architect'],
   specialization:
     'Specialized in React, Frontend Architecture, Micro-frontends, Design Systems, and Cross-Platform Mobile.',
