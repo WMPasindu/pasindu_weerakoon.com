@@ -75,14 +75,38 @@ for (const meta of routeMeta) {
   console.log(`[prerender] wrote ${path.relative(distDir, outPath)}`)
 }
 
-// ---- Sitemap (single page) --------------------------------------------
+// ---- Sitemap --------------------------------------------------------
+// The portfolio itself is one page; additional standalone pages shipped in
+// public/ (e.g. the Rewind game page) are listed here so they stay indexed.
 const today = new Date().toISOString().slice(0, 10)
+const extraPages = [
+  { path: '/rewind', changefreq: 'monthly', priority: '0.8' },
+  { path: '/rewind/privacy', changefreq: 'yearly', priority: '0.3' },
+].filter(({ path: p }) => {
+  // Only list a page that actually exists in the build.
+  const dir = path.join(distDir, p.replace(/^\//, ''))
+  return fs.existsSync(path.join(dir, 'index.html')) || fs.existsSync(`${dir}.html`)
+})
+
+const urls = [
+  { path: '/', changefreq: 'monthly', priority: '1.0' },
+  ...extraPages,
+]
+
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  `  <url>\n    <loc>${SITE}/</loc>\n    <lastmod>${today}</lastmod>\n` +
-  `    <changefreq>monthly</changefreq>\n    <priority>1.0</priority>\n  </url>\n` +
-  `</urlset>\n`
+  urls
+    .map(
+      (u) =>
+        `  <url>\n    <loc>${SITE}${u.path}</loc>\n` +
+        `    <lastmod>${today}</lastmod>\n` +
+        `    <changefreq>${u.changefreq}</changefreq>\n` +
+        `    <priority>${u.priority}</priority>\n  </url>`,
+    )
+    .join('\n') +
+  `\n</urlset>\n`
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap, 'utf-8')
-console.log('[prerender] wrote sitemap.xml')
+console.log(`[prerender] wrote sitemap.xml (${urls.length} urls)`)
+
 console.log('[prerender] done')
